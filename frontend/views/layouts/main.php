@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::t('common','qianzhuli'),
+        'brandLabel' => '<i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','qianzhuli'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,7 +36,8 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => Yii::t('yii','Home'), 'url' => ['/site/index']],
-        ['label' => Yii::t('common','About'), 'url' => ['/site/about']],
+        ['label' => Yii::t('common','Rating'), 'url' => ['/rate/index']],
+        ['label' => Yii::t('common','Information'), 'url' => ['/post/index']],
         ['label' => Yii::t('common','Contact'), 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -44,13 +45,27 @@ AppAsset::register($this);
         $menuItems[] = ['label' => Yii::t('common','Login'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = [
-            'label' => Yii::t('common','Logout') .'('. Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
+            'label' => '<img src = "/statics/images/portrait/xiaotuzi.jpg" alt ="'. Yii::$app->user->identity->username . '">',
+            'linkOptions' => ['class' => 'portrait'],
+            'items' => [
+                [
+                    'label' => '<i class="fa fa-cube" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Personal center'),
+                    'url' => ['/user/index'],
+                    'linkOptions' => ['class' => 'portraitSelect'],
+                ],
+                [
+                    'label' => '<i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Logout'),
+                    'url' => ['/site/logout'],
+                    'linkOptions' => ['data-method' => 'post'],
+                    'linkOptions' => ['class' => 'portraitSelect'],
+                ],
+            ],
         ];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
+        //代码过滤，不加下面这行的话会在前端显示头像的这个<img>标签代码
+        'encodeLabels' => false,
         'items' => $menuItems,
     ]);
     NavBar::end();

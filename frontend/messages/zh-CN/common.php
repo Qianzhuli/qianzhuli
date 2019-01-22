@@ -5,7 +5,7 @@ return [
 	'Contact' => '联系我们',
 	'Signup' => '注册',
 	'Login' => '登录',
-	'Logout' => '注销',
+	'Logout' => '退出账号',
 	'This username has already been taken.' => '该用户名已经被注册。',
 	'This email address has already been taken.' => '该邮箱已经被注册。',
 	'Please fill out the following fields to signup:' => '请填写以下信息以完成注册:',
@@ -21,4 +21,7 @@ return [
 	'Save' => '保存',
 	'Send' => '发送',
 	'If you forgot your password you can ' => '如果你忘记了你的密码你可以',
+	'Information' => '资讯',
+	'Rating' => '评级',
+	'Personal center' => '个人中心',
 ];

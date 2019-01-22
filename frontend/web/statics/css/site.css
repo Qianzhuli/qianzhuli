@@ -89,3 +89,14 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+.navbar-right > li > a.portrait {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.navbar-right > li > a.portrait img {
+    border: #ccc solid 1px;
+    width: 32px;
+    height: 32px;
+}
