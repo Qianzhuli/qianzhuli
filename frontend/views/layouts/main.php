@@ -45,19 +45,17 @@ AppAsset::register($this);
         $menuItems[] = ['label' => Yii::t('common','Login'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = [
-            'label' => '<img src = "' . Yii::$app->params['portrait']['small'] . '" alt ="'. Yii::$app->user->identity->username . '">',
+            'label' => '<img src = "' . Yii::$app->params['portrait']['small'] . '" alt ="'. Yii::$app->user->identity->username . '">&nbsp;&nbsp;'.Yii::$app->user->identity->username,
             'linkOptions' => ['class' => 'portrait'],
             'items' => [
                 [
                     'label' => '<i class="fa fa-cube" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Personal center'),
                     'url' => ['/user/index'],
-                    'linkOptions' => ['class' => 'portraitSelect'],
                 ],
                 [
                     'label' => '<i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Logout'),
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post'],
-                    'linkOptions' => ['class' => 'portraitSelect'],
                 ],
             ],
         ];
