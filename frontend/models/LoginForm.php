@@ -1,8 +1,9 @@
 <?php
-namespace common\models;
+namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
+use common\models\UserModel;
 
 /**
  * Login form
@@ -28,6 +29,15 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('common','Username'),
+            'rememberMe' => Yii::t('common','RememberMe'),
+            'password' => Yii::t('common','Password'),
         ];
     }
 
@@ -70,7 +80,7 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = UserModel::findByUsername($this->username);
         }
 
         return $this->_user;
