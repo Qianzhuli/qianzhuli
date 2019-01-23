@@ -24,4 +24,8 @@ return [
 	'Information' => '资讯',
 	'Rating' => '评级',
 	'Personal center' => '个人中心',
+	'RePassword' => '重复密码',
+	'VerifyCode' => '验证码',
+	'Two times the password is not consitent.' => '两次输入的密码不一致',
+	'Username is composed of letters, Chinese characters, Numbers and underscores, and cannot begin with Numbers and underscores.' => '用户名由字母，汉字，数字，下划线组成，且不能以数字和下划线开头。',
 ];
