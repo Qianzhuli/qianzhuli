@@ -37,7 +37,7 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => Yii::t('yii','Home'), 'url' => ['/site/index']],
         ['label' => Yii::t('common','Rating'), 'url' => ['/rate/index']],
-        ['label' => Yii::t('common','Information'), 'url' => ['/post/index']],
+        ['label' => Yii::t('common','Information'), 'url' => ['/posts/index']],
         ['label' => Yii::t('common','Contact'), 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {

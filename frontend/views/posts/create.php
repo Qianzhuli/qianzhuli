@@ -1,0 +1,44 @@
+<?php
+
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
+
+//echo '<h1>这是文章创建方法</h1>';
+
+$this->title = Yii::t('common','Create');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('common','Information'),'url' => ['posts/index']];
+$this->params['breadcrumbs'][] = $this->title;
+
+?>
+
+<div class="row">
+	<div class="col-lg-9">
+		<div class="panel-title box-title">
+			<span><?= Yii::t('common','Create Post') ?></span>
+		</div>
+		<div class="panel-body">
+			<?php $form = ActiveForm::begin() ?>
+
+			<?= $form->field($model,'title')->textinput(['maxlength' => true]) ?>
+			<?= $form->field($model,'cat_id')->dropDownlist(['1' => '分类1', '2' => '分类2']) ?>
+			<?= $form->field($model,'label_img')->fileInput() ?>
+			<?= $form->field($model,'content')->textArea(['rows' => 6]) ?>
+			<?= $form->field($model,'tags')->textinput(['maxlength' => true]) ?>
+
+			<div class="form-group">
+				<?= Html::submitButton(Yii::t('common','Submit'),['class' => 'btn btn-success']) ?>
+			</div>
+
+			<?php ActiveForm::end() ?>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="panel-title box-title">
+			<span><?= Yii::t('common','Matters Need Attention') ?></span>
+		</div>
+		<div class="panel-body">
+			<p>1.xxxxxxxxxxxxxxxxxxxx</p>
+			<p>2.xxxxxxxxxxxxxxxxxxxx</p>
+		</div>
+	</div>
+</div>

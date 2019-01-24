@@ -100,3 +100,14 @@ a.desc:after {
     width: 32px;
     height: 32px;
 }
+
+.box-title {
+    color:#333;
+    font-size: 18px;
+    border-bottom: 2px solid #cbcbcb;
+    padding-bottom: 5px;
+}
+
+.panel-body {
+    padding: 15px 0 5px;
+}
