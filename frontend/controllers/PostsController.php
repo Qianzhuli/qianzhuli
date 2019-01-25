@@ -3,7 +3,9 @@
 namespace frontend\controllers;
 
 use frontend\controllers\base\BaseController;
+use common\widgets\file_upload\FileUpload;
 use frontend\models\PostsForm;
+use common\models\CatsModel;
 use Yii;
 
 /**
@@ -25,6 +27,7 @@ class PostsController extends BaseController
 	public function actionCreate()
 	{
 		$model = new PostsForm();
-		return $this->render('create',['model' => $model]);
+		$cats = CatsModel::getAllCats();
+		return $this->render('create',['model' => $model, 'cats' => $cats]);
 	}
 }

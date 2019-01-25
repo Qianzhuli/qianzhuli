@@ -19,9 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="panel-body">
 			<?php $form = ActiveForm::begin() ?>
 
-			<?= $form->field($model,'title')->textinput(['maxlength' => true]) ?>
-			<?= $form->field($model,'cat_id')->dropDownlist(['1' => '分类1', '2' => '分类2']) ?>
-			<?= $form->field($model,'label_img')->fileInput() ?>
+			<?= $form->field($model, 'title')->textinput(['maxlength' => true]) ?>
+			<?= $form->field($model, 'cat_id')->dropDownlist($cats) ?>
+			<?= $form->field($model, 'label_img')->fileInput() ?>
 			<?= $form->field($model,'content')->textArea(['rows' => 6]) ?>
 			<?= $form->field($model,'tags')->textinput(['maxlength' => true]) ?>
 
@@ -37,8 +37,9 @@ $this->params['breadcrumbs'][] = $this->title;
 			<span><?= Yii::t('common','Matters Need Attention') ?></span>
 		</div>
 		<div class="panel-body">
-			<p>1.xxxxxxxxxxxxxxxxxxxx</p>
-			<p>2.xxxxxxxxxxxxxxxxxxxx</p>
+			<p>第一!绝对不意气用事!</p>
+			<p>第二!绝对不漏判任何一件坏事!</p>
+			<p>第三!绝对裁判的公正漂亮!</p>
 		</div>
 	</div>
 </div>
