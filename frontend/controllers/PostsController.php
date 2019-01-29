@@ -38,11 +38,11 @@ class PostsController extends BaseController
 		return [
 		    'upload' => [
 		        'class' => \xj\ueditor\actions\Upload::className(),
-		        'uploadBasePath' => '@webroot', //file system path
-		        'uploadBaseUrl' => '@web', //web path
+		        'uploadBasePath' => '@webroot/image', //file system path
+		        'uploadBaseUrl' => '@web/image', //web path
 			'csrf' => true, //csrf校验
 		        'configPatch' => [
-		            'imageMaxSize' => 500 * 1024, //图片
+		            'imageMaxSize' => 1024 * 1024, //图片
 		            'scrawlMaxSize' => 500 * 1024, //涂鸦
 		            'catcherMaxSize' => 500 * 1024, //远程
 		            'videoMaxSize' => 1024 * 1024, //视频

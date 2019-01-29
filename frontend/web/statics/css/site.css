@@ -111,3 +111,7 @@ a.desc:after {
 .panel-body {
     padding: 15px 0 5px;
 }
+
+.bootstrap-tagsinput {
+    width: 100%;
+}

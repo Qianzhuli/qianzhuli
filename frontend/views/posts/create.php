@@ -4,6 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use kartik\file\FileInput;
 use xj\ueditor\Ueditor;
+use pudinglabs\tagsinput\TagsinputWidget;
 
 //echo '<h1>这是文章创建方法</h1>';
 
@@ -34,7 +35,11 @@ $this->params['breadcrumbs'][] = $this->title;
 			        'autoFloatEnable' => true
 			    ],
 			]) ?>
-			<?= $form->field($model, 'tags')->textinput(['maxlength' => true]) ?>
+			<?= $form->field($model, 'tags')->widget(TagsinputWidget::classname(), [
+			            'options' => [],
+			            'clientOptions' => [],
+			            'clientEvents' => []
+			]);?>
 
 			<div class="form-group">
 				<?= Html::submitButton(Yii::t('common','Submit'),['class' => 'btn btn-success']) ?>

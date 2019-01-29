@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ff7827a0011763f5332f82d458d2a37",
+    "content-hash": "149ecc9ad94247c4145a8681597a59ee",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -55,6 +55,47 @@
                 "web"
             ],
             "time": "2018-12-13T23:45:51+00:00"
+        },
+        {
+            "name": "bower-asset/bootstrap-tagsinput",
+            "version": "0.3.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bootstrap-tagsinput/bootstrap-tagsinput.git",
+                "reference": "14f300f0b694ff19382a45f42f28757c34b7ed2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bootstrap-tagsinput/bootstrap-tagsinput/zipball/14f300f0b694ff19382a45f42f28757c34b7ed2b",
+                "reference": "14f300f0b694ff19382a45f42f28757c34b7ed2b",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/bootstrap-tagsinput.js",
+                    "dist/bootstrap-tagsinput.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "jQuery plugin providing a Twitter Bootstrap user interface for managing tags.",
+            "keywords": [
+                "bootstrap",
+                "form",
+                "input",
+                "select",
+                "tags"
+            ],
+            "time": "2014-07-27T12:27:42+00:00"
         },
         {
             "name": "bower-asset/inputmask",
@@ -747,6 +788,51 @@
                 "富文本编辑器"
             ],
             "time": "2018-11-26T02:46:39+00:00"
+        },
+        {
+            "name": "pudinglabs/yii2-bootstrap-tags-input",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pudinglabs/yii2-bootstrap-tags-input.git",
+                "reference": "bff4c05e02b7b5c9915b1ff040320437b5130f45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pudinglabs/yii2-bootstrap-tags-input/zipball/bff4c05e02b7b5c9915b1ff040320437b5130f45",
+                "reference": "bff4c05e02b7b5c9915b1ff040320437b5130f45",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap-tagsinput": "@stable",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "pudinglabs\\tagsinput\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mustoharin",
+                    "email": "admin@pudinglabs.web.id"
+                }
+            ],
+            "description": "Bootstrap tags input for Yii2 framework",
+            "keywords": [
+                "extension",
+                "pudinglabs",
+                "yii2",
+                "yii2 bootstrap tags input",
+                "yii2-bootstrap-tags-input"
+            ],
+            "time": "2016-08-24T04:07:19+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1689,7 +1775,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "kartik-v/yii2-widget-fileinput": 20,
-        "xj/yii2-ueditor-widget": 20
+        "xj/yii2-ueditor-widget": 20,
+        "pudinglabs/yii2-bootstrap-tags-input": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
