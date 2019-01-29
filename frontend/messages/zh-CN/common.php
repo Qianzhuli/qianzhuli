@@ -22,6 +22,7 @@ return [
 	'Send' => '发送',
 	'If you forgot your password you can ' => '如果你忘记了你的密码你可以',
 	'Information' => '资讯',
+	'CreateInformation' => '创建资讯',
 	'Rating' => '评级',
 	'Personal center' => '个人中心',
 	'RePassword' => '重复密码',

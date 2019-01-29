@@ -1,9 +1,9 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
 use Yii;
-use app\models\base\BaseModel;
+use common\models\base\BaseModel;
 
 /**
  * This is the model class for table "posts".
@@ -23,6 +23,8 @@ use app\models\base\BaseModel;
  */
 class PostsModel extends BaseModel
 {
+    const IS_VALID = 1;//发布
+    const NO_VALID = 0;//未发布
     /**
      * {@inheritdoc}
      */

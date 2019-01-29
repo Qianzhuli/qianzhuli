@@ -26,13 +26,22 @@ class PostsController extends BaseController
 	public function actionCreate()
 	{
 		$model = new PostsForm();
+		//定义场景
+		$model->setScenario(PostsForm::SCENARIOS_CREATE);
+		if($model->load(Yii::$app->request->post()) && $model->validate()){
+			if(!$model->create()){
+				Yii::$app->session->setFlash('warning',$model->_lastError);
+			}else{
+				return $this->redirect(['post/view','id'=>$model->id]);
+			}
+		}
 		$cats = CatsModel::getAllCats();
 		return $this->render('create',['model' => $model, 'cats' => $cats]);
 	}
 
 
 	/**
-	 * 百度富文本编译器配置（这个配置用途不详）
+	 * 百度富文本编译器配置
 	 */
 	public function actions() {
 		return [
