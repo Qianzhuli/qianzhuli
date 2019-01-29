@@ -2,6 +2,8 @@
 
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use kartik\file\FileInput;
+use xj\ueditor\Ueditor;
 
 //echo '<h1>这是文章创建方法</h1>';
 
@@ -21,9 +23,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<?= $form->field($model, 'title')->textinput(['maxlength' => true]) ?>
 			<?= $form->field($model, 'cat_id')->dropDownlist($cats) ?>
-			<?= $form->field($model, 'label_img')->fileInput() ?>
-			<?= $form->field($model,'content')->textArea(['rows' => 6]) ?>
-			<?= $form->field($model,'tags')->textinput(['maxlength' => true]) ?>
+			<?= $form->field($model, 'label_img')->widget(FileInput::classname(), ['options' => ['accept' => 'image/*']]); ?>
+			<?= $form->field($model, 'content')->widget(Ueditor::className(), [
+			    'style' => 'width:100%;height:400px',
+			    'renderTag' => true,
+			    'readyEvent' => 'console.log("example2 ready")',
+			    'jsOptions' => [
+			        'serverUrl' => yii\helpers\Url::to(['upload']),
+			        'autoHeightEnable' => true,
+			        'autoFloatEnable' => true
+			    ],
+			]) ?>
+			<?= $form->field($model, 'tags')->textinput(['maxlength' => true]) ?>
 
 			<div class="form-group">
 				<?= Html::submitButton(Yii::t('common','Submit'),['class' => 'btn btn-success']) ?>
