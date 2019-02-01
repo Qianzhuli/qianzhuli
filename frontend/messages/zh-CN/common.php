@@ -1,6 +1,7 @@
 <?php
 return [
-	'qianzhuli' => '钱助理',
+	'Qianzhuli' => '钱助理',
+	'Qianzhuli-a trusted loan rating website' => '钱助理-一个值得信赖的网贷评级网站',
 	'About' => '关于我们',
 	'Contact' => '联系我们',
 	'Signup' => '注册',

@@ -115,3 +115,41 @@ a.desc:after {
 .bootstrap-tagsinput {
     width: 100%;
 }
+
+.site-inde-jumbotron-img {
+    width: 112%;
+    margin-left: -61px;
+}
+
+
+
+/*layout main.php*/
+
+.navbar-inverse {
+    background-color: #f5f5f5;
+    border-top: 0px dashed gray;
+    border-left: 0px dashed gray;
+    border-right: 0px dashed gray;
+    border-bottom: 1px dotted gray;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #343d46;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #343d46;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #2472bc;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #2472bc;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #2472bc;
+}
