@@ -43,7 +43,24 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning', 'info'],
+                    // 'categories' => ['qianzhuli'], //自定义日志分类
+                    // 'maxFileSize' => 1024 *20,  //设置文件大小，以k为单位
+                    // 'logFile' => '@runtime/../logs/qianzhuli'.date('Ymd'), //自定义文件路径
+                    // 'logVars' => ['_POST'],  //捕获请求参数
+                    // 'fileMode' => 0775, //设置日志文件权限
+                    // 'maxLogFiles' => 100,  //同个文件名最大数量
+                    // 'rotateByCopy' => false, //是否以复制的方式rotate
+                    // 'prefix' => function() {   //日志格式自定义 回调方法
+                    //     if (Yii::$app === null) {
+                    //         return '';
+                    //     }
+                    //     $request = Yii::$app->getRequest();
+                    //     $ip = $request instanceof Request ? $request->getUserIP() : '-';
+                    //     $controller = Yii::$app->controller->id;
+                    //     $action = Yii::$app->controller->action->id;
+                    //     return "[$ip][$controller-$action]";
+                    // }
                 ],
             ],
         ],

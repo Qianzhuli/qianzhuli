@@ -4,6 +4,9 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use common\models\PostsModel;
+use yii\base\Object;
+use common\models\RelationPostTagsModel;
+use yii\db\Query;
 
 /**
  * 文章表单模型
@@ -24,6 +27,12 @@ class PostsForm extends Model
 	 */
 	const SCENARIOS_CREATE = 'create';
 	const SCENARIOS_UPDATE = 'update';
+
+	/*
+	 *定义事件
+	 */
+	const EVENT_AFTER_CREATE = 'eventAfterCreate';
+	const EVENT_AFTER_UPDATE = 'eventAfterUpdate';
 
 	/*
 	 *场景设置
@@ -81,8 +90,12 @@ class PostsForm extends Model
 			}
 			$this->id = $model->id;
 
+			Yii::error('test error');
+
 			//调用事件
-			$this->_eventAfterCreate();
+			$data = array_merge($this->getAttributes(),$model->getAttributes());
+			//var_dump($data);exit;
+			$this->_eventAfterCreate($data);
 
 			$transaction->commit();
 			return true;
@@ -102,8 +115,42 @@ class PostsForm extends Model
 
 	/*
 	 *创建完成后调用事件方法
+	 *添加标签等
 	 */
-	public function _eventAfterCreate(){
+	public function _eventAfterCreate($data){
+		//添加事件1
+		$this->on(self::EVENT_AFTER_CREATE,[$this,'_eventAddTag'],$data);
+		//触发事件
+		$this->trigger(self::EVENT_AFTER_CREATE);
+		//添加事件2
+		//$this->on(self::EVENT_AFTER_CREATE,[$this,'_eventAddTag'],$data);
+	}
 
+	/*
+	 *添加标签
+	 */
+	public function _eventAddTag($event){
+		$tag = new TagsForm();
+		//var_dump($event);exit;
+		$tag->tags = explode(',', $event->data['tags']);
+		//var_dump($tag->tags);exit;
+		$tagIds = $tag->saveTags();
+		//var_dump($tagIds);exit;
+
+		//删除原先的关联关系
+		RelationPostTagsModel::deleteAll(['post_id' => $event->data['id']]);
+
+		//批量保存文章标签的关联关系
+		if(!empty($tagIds)){
+			foreach ($tagIds as $k => $id) {
+				$row[$k]['post_id'] = $this->id;
+				$row[$k]['tag_id'] = $id;
+
+				$res = (new Query())->createCommand()->batchInsert(RelationPostTagsModel::tableName(),['post_id','tag_id'],$row)->execute();
+				if(!$res){
+					throw new \Exception("关联关系保存失败");
+				}
+			}
+		}
 	}
 }

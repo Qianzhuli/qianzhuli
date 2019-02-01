@@ -29,6 +29,8 @@ class PostsController extends BaseController
 		//定义场景
 		$model->setScenario(PostsForm::SCENARIOS_CREATE);
 		if($model->load(Yii::$app->request->post()) && $model->validate()){
+			//用Yii::$app->request->post()获取表单传的数据,不加参数的话是个数组
+			//var_dump(Yii::$app->request->post()['PostsForm']['title']);exit;
 			if(!$model->create()){
 				Yii::$app->session->setFlash('warning',$model->_lastError);
 			}else{
