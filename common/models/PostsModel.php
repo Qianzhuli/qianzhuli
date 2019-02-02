@@ -45,6 +45,15 @@ class PostsModel extends BaseModel
         ];
     }
 
+    /*
+     *
+     */
+    public function getPostById($id)
+    {
+            $post = self::find()->where(['id'=>$id])->one();
+            return $post;
+    }
+
     /**
      * {@inheritdoc}
      */

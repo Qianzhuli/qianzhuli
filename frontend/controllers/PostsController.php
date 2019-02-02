@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\controllers\base\BaseController;
 use frontend\models\PostsForm;
+use common\models\PostsModel;
 use common\models\CatsModel;
 use Yii;
 
@@ -34,13 +35,25 @@ class PostsController extends BaseController
 			if(!$model->create()){
 				Yii::$app->session->setFlash('warning',$model->_lastError);
 			}else{
-				return $this->redirect(['post/view','id'=>$model->id]);
+				return $this->redirect(['posts/check','id'=>$model->id]);
 			}
 		}
 		$cats = CatsModel::getAllCats();
 		return $this->render('create',['model' => $model, 'cats' => $cats]);
 	}
 
+	public function actionCheck()
+	{
+		if (empty(Yii::$app->request->get()['id'])) {
+			return $this->render('check');
+		}
+
+		//如果get请求不空的话，去数据库取资讯名，展示在前端
+		$model = new PostsModel();
+		$post = $model->getPostById(Yii::$app->request->get()['id']);
+		$title = $post['title'];
+		return $this->render('check',['id' => Yii::$app->request->get()['id'], 'title' => $title]);
+	}
 
 	/**
 	 * 百度富文本编译器配置

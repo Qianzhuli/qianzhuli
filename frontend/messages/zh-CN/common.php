@@ -44,4 +44,6 @@ return [
 	'Create' => '创建',
 	'Create Post' => '创建文章',
 	'Matters Need Attention' => '注意事项',
+	'Check' => '审核',
+	'My Information' => '我的资讯',
 ];
