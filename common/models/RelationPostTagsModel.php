@@ -44,4 +44,9 @@ class RelationPostTagsModel extends BaseModel
             'tag_id' => Yii::t('app', 'Tag ID'),
         ];
     }
+
+    public function getTag()
+    {
+        return $this->hasOne(TagsModel::classname(),['id'=>'tag_id']);
+    }
 }

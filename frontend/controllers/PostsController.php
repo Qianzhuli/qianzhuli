@@ -22,7 +22,7 @@ class PostsController extends BaseController
 	}
 
 	/**
-	 *创建文章
+	 *创建资讯
 	 */
 	public function actionCreate()
 	{
@@ -42,17 +42,41 @@ class PostsController extends BaseController
 		return $this->render('create',['model' => $model, 'cats' => $cats]);
 	}
 
-	public function actionCheck()
+	/**
+	 *资讯审核
+	 */
+	public function actionCheck($id)
 	{
-		if (empty(Yii::$app->request->get()['id'])) {
-			return $this->render('check');
+		if (empty($id)) {
+			throw new \Exception("文章不存在", 1);
 		}
 
-		//如果get请求不空的话，去数据库取资讯名，展示在前端
-		$model = new PostsModel();
+		//去数据库取资讯名，展示在前端
+		$model = new PostsForm();
 		$post = $model->getPostById(Yii::$app->request->get()['id']);
 		$title = $post['title'];
-		return $this->render('check',['id' => Yii::$app->request->get()['id'], 'title' => $title]);
+		return $this->render('check',['id' => $id, 'title' => $title]);
+	}
+
+	/**
+	 *资讯展示
+	 */
+	public function actionView($id){
+		$model = new PostsForm();
+		$post = $model->getPostById($id);
+
+		return $this->render('view',['post' => $post]);
+	}
+
+	/**
+	 *我的资讯页
+	 */
+	public function actionMine(){
+		$model = new PostsForm();
+		$userId = Yii::$app->user->identity->id;
+		$posts = $model->getPostsByUserId($userId);
+
+		return $this->render('mine',['posts' => $posts]);
 	}
 
 	/**

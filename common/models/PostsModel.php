@@ -45,13 +45,9 @@ class PostsModel extends BaseModel
         ];
     }
 
-    /*
-     *
-     */
-    public function getPostById($id)
+    public function getRelate()
     {
-            $post = self::find()->where(['id'=>$id])->one();
-            return $post;
+        return $this->hasMany(RelationPostTagsModel::classname(),['post_id'=>'id']);
     }
 
     /**

@@ -153,4 +153,40 @@ class PostsForm extends Model
 			}
 		}
 	}
+
+	/*
+     *获取资讯ById
+     */
+    public function getPostById($id)
+    {
+        $post = PostsModel::find()->with('relate.tag')->where(['id'=>$id])->asArray()->one();
+       	//print_r($post);exit;
+       	if(!$post){
+       		throw new \Exception("文章不存在", 1);
+       	}
+        //处理标签格式
+        $post['tags'] = [];
+        if(isset($post['relate']) && !empty($post['relate'])){
+        	foreach ($post['relate'] as $list) {
+        		//print_r($list);exit;
+        		$post['tags'][] = $list['tag']['tag_name']; 
+        	}
+        }
+        unset($post['relate']);
+        //print_r($post);exit;
+        return $post;
+    }
+
+    /*
+     *获取资讯ByUserId
+     */
+    public function getPostsByUserId($userId)
+    {
+        $posts = PostsModel::find()->where(['user_id'=>$userId])->asArray()->all();
+       	//print_r($post);exit;
+       	if(!$posts){
+       		throw new \Exception("文章不存在", 1);
+       	}
+        return $posts;
+    }
 }
