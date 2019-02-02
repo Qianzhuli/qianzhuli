@@ -55,7 +55,7 @@ class PostsController extends BaseController
 		$model = new PostsForm();
 		$post = $model->getPostById(Yii::$app->request->get()['id']);
 		$title = $post['title'];
-		return $this->render('check',['id' => $id, 'title' => $title]);
+		return $this->render('check',['post' => $post]);
 	}
 
 	/**

@@ -110,7 +110,7 @@ class PostsForm extends Model
 		if(empty($this->content)){
 			return null;
 		}
-		return (mb_substr(str_replace('&nbsp;', '', strip_tags($this->content)),$s, $e, $char));
+		return (mb_substr(str_replace('&nbsp;', '', strip_tags($this->content)),$s, $e, $char).'...');
 	}
 
 	/*
