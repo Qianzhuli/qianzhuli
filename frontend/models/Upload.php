@@ -20,7 +20,7 @@ class Upload extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [["file"], "file",],
+            [["file"], "file", 'maxSize'=>1024*2000,'minSize'=>1024*10],
         ];
     }
 
@@ -30,6 +30,4 @@ class Upload extends \yii\db\ActiveRecord
             'file' => Yii::t('common','Preview'),
         ];
     }
-
-
 }

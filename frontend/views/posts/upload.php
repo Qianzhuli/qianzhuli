@@ -18,6 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?php $form = ActiveForm::begin(["options" => ["enctype" => "multipart/form-data"]]) ?>
 			
 			<?= $form->field($model, "file")->fileInput() ?>
+			<div>请上传2M以下的图片</div>
+			<div>&nbsp;</div>
 
 			<div class="form-group">
 				<?= Html::submitButton(Yii::t('common','Submit'),['class' => 'btn btn-success']) ?>
