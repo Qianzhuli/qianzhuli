@@ -6,9 +6,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="cow">
-	<div class="col-lg-9">
+	<div class="col-lg-12">
 		<table class="posts-mine-table">
 			<tr>
+				<th>预览图</th>
 				<th>标题</th>
 				<th>摘要</th>
 				<th>审核状态</th>
@@ -17,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			</tr>
 			<?php foreach ($posts as $post):?>
 				<tr>
+					<?= '<td><img src="' . $post['label_img'] . '"></td>' ?>
 					<td><?= '<a href="view?id='.$post['id'].'">'.$post['title'].'</a>'?></td>
 					<td><?= $post['summary'] ?></td>
 					<td><?php if($post['is_valid'] == 1){
@@ -30,8 +32,4 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?php endforeach?>
 		</table>
 	</div>
-	<div class="col-lg-3">
-		
-	</div>
-	
 </div>

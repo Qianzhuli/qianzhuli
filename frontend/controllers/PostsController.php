@@ -6,6 +6,8 @@ use frontend\controllers\base\BaseController;
 use frontend\models\PostsForm;
 use common\models\PostsModel;
 use common\models\CatsModel;
+use yii\web\UploadedFile;
+use frontend\models\Upload;
 use Yii;
 
 /**
@@ -29,13 +31,14 @@ class PostsController extends BaseController
 		$model = new PostsForm();
 		//定义场景
 		$model->setScenario(PostsForm::SCENARIOS_CREATE);
+
 		if($model->load(Yii::$app->request->post()) && $model->validate()){
 			//用Yii::$app->request->post()获取表单传的数据,不加参数的话是个数组
-			//var_dump(Yii::$app->request->post()['PostsForm']['title']);exit;
+			//var_dump(Yii::$app->request->post());exit;
 			if(!$model->create()){
 				Yii::$app->session->setFlash('warning',$model->_lastError);
 			}else{
-				return $this->redirect(['posts/check','id'=>$model->id]);
+				return $this->redirect(['posts/upload','id'=>$model->id]);
 			}
 		}
 		$cats = CatsModel::getAllCats();
@@ -79,4 +82,40 @@ class PostsController extends BaseController
 		return $this->render('mine',['posts' => $posts]);
 	}
 
+	public function actionUpload($id){
+		
+		$model = new Upload();
+		//var_dump($model);exit;
+		$postsModel = new PostsModel();
+        $post = $postsModel->find()->where(['id'=>$id])->one();
+        $title = $post->title;
+        $uploadSuccessPath = "";
+        
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, "file");
+            //文件上传存放的目录
+            $dir = "../web/yii2-widget-fileinput/".date("Ymd");
+            if (!is_dir($dir))
+                mkdir($dir);
+            if ($model->validate()) {
+                //文件名
+                $fileName = date("HiiHsHis") . rand(0,100) . "." . $model->file->extension;
+                $dir = $dir."/". $fileName;
+                $model->file->saveAs($dir);
+                $uploadSuccessPath = '/yii2-widget-fileinput/'.date("Ymd")."/".$fileName;
+            }
+        	$post->label_img = $uploadSuccessPath;
+        	if (!$post->save()) {
+        		throw new \Exception("预览图保存失败,请联系管理员", 1);
+        		
+        	}
+        	return $this->redirect(['posts/check','id'=>$id]);
+        }    
+
+        return $this->render("upload", [
+            "model" => $model,
+            "uploadSuccessPath" => $uploadSuccessPath,
+            "title" => $title,
+        ]);
+	}
 }

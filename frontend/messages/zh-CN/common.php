@@ -46,4 +46,6 @@ return [
 	'Matters Need Attention' => '注意事项',
 	'Check' => '审核',
 	'My Information' => '我的资讯',
+	'Preview' => '预览图',
+	'Choose Preview' => '选择预览图',
 ];

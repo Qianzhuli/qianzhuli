@@ -2,7 +2,6 @@
 
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-use kartik\file\FileInput;
 use xj\ueditor\Ueditor;
 use pudinglabs\tagsinput\TagsinputWidget;
 
@@ -20,11 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			<span><?= Yii::t('common','Create Post') ?></span>
 		</div>
 		<div class="panel-body">
-			<?php $form = ActiveForm::begin() ?>
+			<?php $form = ActiveForm::begin(["options" => ["enctype" => "multipart/form-data"]]) ?>
 
 			<?= $form->field($model, 'title')->textinput(['maxlength' => true]) ?>
 			<?= $form->field($model, 'cat_id')->dropDownlist($cats) ?>
-			<?= $form->field($model, 'label_img')->widget(FileInput::classname(), ['options' => ['accept' => 'image/*']]); ?>
 			<?= $form->field($model, 'content')->widget(\crazydb\ueditor\UEditor::className()) ?>
 			<?= $form->field($model, 'tags')->widget(TagsinputWidget::classname(), [
 			            'options' => [],

@@ -18,8 +18,6 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "kartik-v/yii2-widget-fileinput": "@dev",
-        "moxuandi/yii2-kindeditor": "~1.0",
         "pudinglabs/yii2-bootstrap-tags-input": "dev-master",
         "crazydb/yii2-ueditor": "*"
     },

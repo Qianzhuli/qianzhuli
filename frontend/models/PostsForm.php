@@ -86,12 +86,13 @@ class PostsForm extends Model
 			$model->created_at = time();
 			$model->updated_at = time();
 
+            //$model->label_img = $uploadSuccessPath;
+            //print_r($model->label_img);exit;
+
 			if(!$model->save()){
 				throw new \Exception("文章保存失败！");
 			}
 			$this->id = $model->id;
-
-			Yii::error('test error');
 
 			//调用事件
 			$data = array_merge($this->getAttributes(),$model->getAttributes());
