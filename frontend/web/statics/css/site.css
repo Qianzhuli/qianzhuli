@@ -190,3 +190,12 @@ a.desc:after {
     width: 100%;
     border: 1px;
 }
+
+/*我的资讯页*/
+.posts-mine-table tr th {
+    height: 50px;
+}
+
+.posts-mine-table tr td {
+    height: 30px;
+}

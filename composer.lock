@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "149ecc9ad94247c4145a8681597a59ee",
+    "content-hash": "f908e39630c02167bee896167ef07d15",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -315,6 +315,46 @@
                 "markdown-extra"
             ],
             "time": "2018-12-10T09:41:35+00:00"
+        },
+        {
+            "name": "crazydb/yii2-ueditor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xbzbing/Yii2-UEditor.git",
+                "reference": "67dca3516182cc884e8020c6cc15649755a6e2c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xbzbing/Yii2-UEditor/zipball/67dca3516182cc884e8020c6cc15649755a6e2c2",
+                "reference": "67dca3516182cc884e8020c6cc15649755a6e2c2",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-imagine": "~2.1.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "crazydb\\ueditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "疯狂的dabing",
+                    "email": "xbzbing@gmail.com"
+                }
+            ],
+            "description": "Yii2的百度UEditor扩展",
+            "keywords": [
+                "ueditor",
+                "yii2"
+            ],
+            "time": "2017-06-14T07:07:55+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -840,12 +880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "bb120bb10dd145f686865f434bbba53715f6ca53"
+                "reference": "c2100aa5bf9acd57e712f208030f1e5e32e420c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/bb120bb10dd145f686865f434bbba53715f6ca53",
-                "reference": "bb120bb10dd145f686865f434bbba53715f6ca53",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/c2100aa5bf9acd57e712f208030f1e5e32e420c5",
+                "reference": "c2100aa5bf9acd57e712f208030f1e5e32e420c5",
                 "shasum": ""
             },
             "require": {
@@ -894,7 +934,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-01-20T16:10:32+00:00"
+            "time": "2019-01-30T06:37:50+00:00"
         },
         {
             "name": "symfony/polyfill-iconv",
@@ -1132,53 +1172,17 @@
             "time": "2018-09-21T13:07:52+00:00"
         },
         {
-            "name": "xj/yii2-ueditor-widget",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/xjflyttp/yii2-ueditor-widget.git",
-                "reference": "9be7755981578bed45db79411c2080e0f3da422e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xjflyttp/yii2-ueditor-widget/zipball/9be7755981578bed45db79411c2080e0f3da422e",
-                "reference": "9be7755981578bed45db79411c2080e0f3da422e",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "xj\\ueditor\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "xjflyttp",
-                    "email": "xjflyttp@gmail.com"
-                }
-            ],
-            "description": "yii2-ueditor-widget",
-            "time": "2017-11-30T03:15:16+00:00"
-        },
-        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "0b458e5c79c775ad7baa678248c5ff64e2496f95"
+                "reference": "75c9096d5ae13805c738e206eb81fd4f64e6d477"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/0b458e5c79c775ad7baa678248c5ff64e2496f95",
-                "reference": "0b458e5c79c775ad7baa678248c5ff64e2496f95",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/75c9096d5ae13805c738e206eb81fd4f64e6d477",
+                "reference": "75c9096d5ae13805c738e206eb81fd4f64e6d477",
                 "shasum": ""
             },
             "require": {
@@ -1265,7 +1269,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2019-01-28T21:36:14+00:00"
+            "time": "2019-01-30T23:54:44+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -1273,12 +1277,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "f83ea7d299606e4094ffba5f044155f85c4ef314"
+                "reference": "5ad34490ba50107131ea7259d8f1c51028cedeb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/f83ea7d299606e4094ffba5f044155f85c4ef314",
-                "reference": "f83ea7d299606e4094ffba5f044155f85c4ef314",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/5ad34490ba50107131ea7259d8f1c51028cedeb4",
+                "reference": "5ad34490ba50107131ea7259d8f1c51028cedeb4",
                 "shasum": ""
             },
             "require": {
@@ -1325,7 +1329,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2019-01-04T16:37:46+00:00"
+            "time": "2019-01-29T21:40:10+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -1621,12 +1625,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "f1f455565400eba978ef483015b7e0d5fed8b971"
+                "reference": "86e4931e3ed159081903b9faa571a5dff2c25ee6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/f1f455565400eba978ef483015b7e0d5fed8b971",
-                "reference": "f1f455565400eba978ef483015b7e0d5fed8b971",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/86e4931e3ed159081903b9faa571a5dff2c25ee6",
+                "reference": "86e4931e3ed159081903b9faa571a5dff2c25ee6",
                 "shasum": ""
             },
             "require": {
@@ -1670,7 +1674,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2018-12-14T19:01:42+00:00"
+            "time": "2019-02-02T18:57:31+00:00"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -1725,12 +1729,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "b7becd5f43f610048b30c13d9ac29589b29b9661"
+                "reference": "bfe6044f7ee8089923c0bbfda7394a94925c4b0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/b7becd5f43f610048b30c13d9ac29589b29b9661",
-                "reference": "b7becd5f43f610048b30c13d9ac29589b29b9661",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/bfe6044f7ee8089923c0bbfda7394a94925c4b0e",
+                "reference": "bfe6044f7ee8089923c0bbfda7394a94925c4b0e",
                 "shasum": ""
             },
             "require": {
@@ -1768,14 +1772,13 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2018-12-10T08:30:52+00:00"
+            "time": "2019-02-02T20:01:31+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "kartik-v/yii2-widget-fileinput": 20,
-        "xj/yii2-ueditor-widget": 20,
         "pudinglabs/yii2-bootstrap-tags-input": 20
     },
     "prefer-stable": false,

@@ -20,8 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-widget-fileinput": "@dev",
         "moxuandi/yii2-kindeditor": "~1.0",
-        "xj/yii2-ueditor-widget": "dev-master",
-        "pudinglabs/yii2-bootstrap-tags-input": "dev-master"
+        "pudinglabs/yii2-bootstrap-tags-input": "dev-master",
+        "crazydb/yii2-ueditor": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

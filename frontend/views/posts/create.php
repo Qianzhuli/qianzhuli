@@ -25,16 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?= $form->field($model, 'title')->textinput(['maxlength' => true]) ?>
 			<?= $form->field($model, 'cat_id')->dropDownlist($cats) ?>
 			<?= $form->field($model, 'label_img')->widget(FileInput::classname(), ['options' => ['accept' => 'image/*']]); ?>
-			<?= $form->field($model, 'content')->widget(Ueditor::className(), [
-			    'style' => 'width:100%;height:400px',
-			    'renderTag' => true,
-			    'readyEvent' => 'console.log("example2 ready")',
-			    'jsOptions' => [
-			        'serverUrl' => yii\helpers\Url::to(['upload']),
-			        'autoHeightEnable' => true,
-			        'autoFloatEnable' => true
-			    ],
-			]) ?>
+			<?= $form->field($model, 'content')->widget(\crazydb\ueditor\UEditor::className()) ?>
 			<?= $form->field($model, 'tags')->widget(TagsinputWidget::classname(), [
 			            'options' => [],
 			            'clientOptions' => [],

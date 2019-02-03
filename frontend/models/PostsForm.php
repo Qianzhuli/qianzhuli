@@ -52,7 +52,7 @@ class PostsForm extends Model
 		return [
 			[['id','title','content','cat_id'], 'required'],
 			[['id','cat_id'], 'integer'],
-			['title','string','min'=>4,'max'=>50],
+			['title','string','min'=>4,'max'=>24],
 		];
 	}
 
@@ -69,7 +69,7 @@ class PostsForm extends Model
 	}
 
 	/*
-	 *文章创建
+	 *资讯创建
 	 */
 	public function create()
 	{
@@ -81,7 +81,8 @@ class PostsForm extends Model
 			$model->summary = $this->_getSummary();
 			$model->user_id = Yii::$app->user->identity->id;
 			$model->user_name = Yii::$app->user->identity->username;
-			$model->is_valid = PostsModel::IS_VALID;
+			//默认刚创建的资讯是未审核的，需要在管理后台审核
+			$model->is_valid = PostsModel::NO_VALID;
 			$model->created_at = time();
 			$model->updated_at = time();
 
@@ -106,7 +107,7 @@ class PostsForm extends Model
 		}
 	}
 
-	private function _getSummary($s = 0,$e = 90,$char = 'utf-8'){
+	private function _getSummary($s = 0,$e = 50,$char = 'utf-8'){
 		if(empty($this->content)){
 			return null;
 		}
@@ -185,7 +186,8 @@ class PostsForm extends Model
         $posts = PostsModel::find()->where(['user_id'=>$userId])->asArray()->all();
        	//print_r($post);exit;
        	if(!$posts){
-       		throw new \Exception("文章不存在", 1);
+       		//throw new \Exception("文章不存在", 1);
+       		return array();
        	}
         return $posts;
     }
