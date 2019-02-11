@@ -1,7 +1,6 @@
 <?php
 $this->title = $post['title'];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('common','Information'),'url' => ['posts/index']];
-$this->params['breadcrumbs'][] = ['label' => Yii::$app->user->identity->username . Yii::t('common','Information'),'url' => ['posts/mine']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>

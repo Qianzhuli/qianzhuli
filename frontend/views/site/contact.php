@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="panel-title box-title">
                 <h4 style="text-align: center;"><?= Yii::t('common','List of sponsors') ?></h4>
             </div>
+            <!-- 赞助者列表 -->
             <div class="panel-body">
                 <p style="text-align: center;">田迪亚&nbsp;&nbsp;&nbsp;<a href="#">985901085@qq.com</a></p>
             </div>

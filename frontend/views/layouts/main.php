@@ -40,7 +40,7 @@ AppAsset::register($this);
             ['label' => Yii::t('yii','Home'), 'url' => ['/site/index']],
             ['label' => Yii::t('common','Rating'), 'url' => ['/rate/index']],
             ['label' => Yii::t('common','Information'), 'url' => ['/posts/index']],
-            ['label' => Yii::t('common','Contact'), 'url' => ['/site/contact']],
+            ['label' => Yii::t('common','PayForUs'), 'url' => ['/site/contact']],
         ];
         $menuItems[] = ['label' => Yii::t('common','Signup'), 'url' => ['/site/signup']];
         $menuItems[] = ['label' => Yii::t('common','Login'), 'url' => ['/site/login']];
