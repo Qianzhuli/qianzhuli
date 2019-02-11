@@ -116,7 +116,7 @@ a.desc:after {
     width: 100%;
 }
 
-.site-inde-jumbotron-img {
+.site-index-jumbotron-img {
     width: 112%;
     margin-left: -61px;
 }
@@ -203,4 +203,9 @@ a.desc:after {
 .posts-mine-table tr td img{
     width: 50px;
     height: 50px;
+}
+
+/*打赏我们*/
+.site-contact-PayImg {
+    width: 100%;
 }

@@ -6,5 +6,6 @@ return [
     ],
     'webImages' => [
     	'SiteTitle1' => '/statics/images/webImages/SiteTitle1.jpg',
+    	'PayImg' => '/statics/images/webImages/PayImg.jpg',
     ],
 ];

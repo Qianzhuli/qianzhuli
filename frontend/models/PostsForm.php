@@ -161,7 +161,7 @@ class PostsForm extends Model
      */
     public function getPostById($id)
     {
-        $post = PostsModel::find()->with('relate.tag')->where(['id'=>$id])->asArray()->one();
+        $post = PostsModel::find()->with('relate.tag', 'extends')->where(['id'=>$id])->asArray()->one();
        	//print_r($post);exit;
        	if(!$post){
        		throw new \Exception("文章不存在", 1);

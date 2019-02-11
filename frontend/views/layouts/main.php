@@ -50,7 +50,7 @@ AppAsset::register($this);
             ['label' => Yii::t('common','Rating'), 'url' => ['/rate/index']],
             ['label' => Yii::t('common','Information'), 'url' => ['/posts/index']],
             ['label' => Yii::t('common','CreateInformation'), 'url' => ['/posts/create']],
-            ['label' => Yii::t('common','Contact'), 'url' => ['/site/contact']],
+            ['label' => Yii::t('common','PayForUs'), 'url' => ['/site/contact']],
         ];
         $menuItems[] = [
             'label' => '<img src = "' . Yii::$app->params['portrait']['small'] . '" alt ="'. Yii::$app->user->identity->username . '">&nbsp;&nbsp;' . Yii::$app->user->identity->username,

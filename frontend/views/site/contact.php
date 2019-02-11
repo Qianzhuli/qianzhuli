@@ -8,37 +8,26 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = Yii::t('common','Contact');
+$this->title = Yii::t('common','PayForUs');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Yii::t('common','If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.'); ?>
-    </p>
-
     <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+        <div class="col-lg-8">
+            <h1><?= Html::encode($this->title) ?>：)</h1>
 
-                <?= $form->field($model, 'name') ?>
+            <p>
+                <?= Yii::t('common','Money assistant net loan rating website has been free, and will continue to be free, until the rating website does not exist so far.There is no plan to charge for the service at present. If you think this website is useful to you, please sponsor us.'); ?>
+            </p>
 
-                <?= $form->field($model, 'email') ?>
+            <?= '<img src="' . Yii::$app->params['webImages']['PayImg'] . '" class="site-contact-PayImg">'; ?>
 
-                <?= $form->field($model, 'subject') ?>
-
-                <?= $form->field($model, 'body')->textArea(['rows' => 6]) ?>
-
-                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                ]) ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('common','Submit'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+            <p style="text-align: center;">
+                <?= Yii::t('common','The sponsorship fee is 50 yuan and above, we will show your name, personal website and so on to the list of individual sponsors.'); ?>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h1 style="text-align: center;">赞助者列表</h1>
         </div>
     </div>
 

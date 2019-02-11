@@ -8,6 +8,7 @@ use common\models\PostsModel;
 use common\models\CatsModel;
 use yii\web\UploadedFile;
 use frontend\models\Upload;
+use common\models\PostExtendsModel;
 use Yii;
 
 /**
@@ -67,6 +68,11 @@ class PostsController extends BaseController
 	public function actionView($id){
 		$model = new PostsForm();
 		$post = $model->getPostById($id);
+		//var_dump($post['extends']);exit;
+
+		//文章统计
+		$Extendsmodel = new PostExtendsModel();
+		$Extendsmodel->upCounter(['post_id' => $id], 'browser', 1);
 
 		return $this->render('view',['post' => $post]);
 	}
