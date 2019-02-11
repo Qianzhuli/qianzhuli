@@ -7,7 +7,7 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
 <div class="site-index">
 
     <div class="jumbotron">
-        <?= '<img src="' . Yii::$app->params['webImages']['SiteTitle1'] . '" class="site-inde-jumbotron-img">'; ?>
+        <?= '<img src="' . Yii::$app->params['webImages']['SiteTitle1'] . '" class="site-index-jumbotron-img">'; ?>
     </div>
 
     <div class="body-content">

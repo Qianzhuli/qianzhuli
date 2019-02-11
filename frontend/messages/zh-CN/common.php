@@ -30,7 +30,7 @@ return [
 	'VerifyCode' => '验证码',
 	'Two times the password is not consitent.' => '两次输入的密码不一致',
 	'Username is composed of letters, Chinese characters, Numbers and underscores, and cannot begin with Numbers and underscores.' => '用户名由字母，汉字，数字，下划线组成，且不能以数字和下划线开头。',
-	'Money assistant net loan rating website has been free, and will continue to be free, until the rating website does not exist so far.There is no plan to charge for the service at present. If you think this website is useful to you, please sponsor us.' => '钱助理网贷评级网站一直是免费的，并且将一直免费下去，直到这个评级网站没有存在意义为止。目前没有收费服务的计划，如果您觉得这个网站对您有用，请赞助我们。',
+	'Money assistant net loan rating website has been free, and will continue to be free, until the rating website does not exist so far.There is no plan to charge for the service at present. If you think this website is useful to you, please sponsor us. We promise that the sponsorship we receive will only be used for the purchase of servers and daily maintenance. Thank you.' => '钱助理网贷评级网站一直是免费的，并且将一直免费下去，直到这个评级网站没有存在意义为止。目前没有收费服务的计划，如果您觉得这个网站对你有帮助，请赞助我们。我们承诺，所有赞助资金将仅用于采购服务器以及运维工具，谢谢你的赞助！',
 	'Name' => '姓名',
 	'Subject' => '主题',
 	'Body' => '正文',
@@ -49,4 +49,5 @@ return [
 	'Preview' => '预览图',
 	'Choose Preview' => '选择预览图',
 	'The sponsorship fee is 50 yuan and above, we will show your name, personal website and so on to the list of individual sponsors.' => '赞助费用在 50 元及以上，我们会将您的姓名、个人网址等展示到赞助者列表中。',
+	'List of sponsors' => '赞助者列表',
 ];

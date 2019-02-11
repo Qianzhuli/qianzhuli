@@ -13,11 +13,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
     <div class="row">
-        <div class="col-lg-8">
-            <h1><?= Html::encode($this->title) ?>：)</h1>
+        <div class="col-lg-9">
+            <h1 style="text-align: center;"><?= Html::encode($this->title) ?>：)</h1>
 
             <p>
-                <?= Yii::t('common','Money assistant net loan rating website has been free, and will continue to be free, until the rating website does not exist so far.There is no plan to charge for the service at present. If you think this website is useful to you, please sponsor us.'); ?>
+                <?= Yii::t('common','Money assistant net loan rating website has been free, and will continue to be free, until the rating website does not exist so far.There is no plan to charge for the service at present. If you think this website is useful to you, please sponsor us. We promise that the sponsorship we receive will only be used for the purchase of servers and daily maintenance. Thank you.'); ?>
             </p>
 
             <?= '<img src="' . Yii::$app->params['webImages']['PayImg'] . '" class="site-contact-PayImg">'; ?>
@@ -26,8 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Yii::t('common','The sponsorship fee is 50 yuan and above, we will show your name, personal website and so on to the list of individual sponsors.'); ?>
             </p>
         </div>
-        <div class="col-lg-4">
-            <h1 style="text-align: center;">赞助者列表</h1>
+        <div class="col-lg-3">
+            <div class="panel-title box-title">
+                <h4 style="text-align: center;"><?= Yii::t('common','List of sponsors') ?></h4>
+            </div>
+            <div class="panel-body">
+                <p style="text-align: center;">田迪亚&nbsp;&nbsp;&nbsp;<a href="#">985901085@qq.com</a></p>
+            </div>
         </div>
     </div>
 
