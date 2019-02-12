@@ -205,6 +205,31 @@ a.desc:after {
     height: 50px;
 }
 
+.post-label-mine {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    line-height: 1.42857;
+    padding: 4px;
+    transition: border 0.2s ease-in-out 0s;
+    border-radius: 0;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.post-label-mine > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 70px;
+    width: 100%;
+}
+
+.pull-right-mine {
+    margin-top: -50px;
+    float: right !important;
+}
+
 /*打赏我们*/
 .site-contact-PayImg {
     width: 100%;
@@ -238,6 +263,7 @@ a.desc:after {
     height: 150px;
     width: 100%;
 }
+
 
 .post-tags {
     color: #999;

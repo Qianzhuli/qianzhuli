@@ -9,6 +9,7 @@ use common\models\CatsModel;
 use yii\web\UploadedFile;
 use frontend\models\Upload;
 use common\models\PostExtendsModel;
+use yii\data\Pagination;
 use Yii;
 
 /**
@@ -16,6 +17,9 @@ use Yii;
  */
 class PostsController extends BaseController
 {
+	public $title = '';
+	public $limit = 5;
+	public $page = true;
 	/**
 	 *文章列表页
 	 */
@@ -81,6 +85,27 @@ class PostsController extends BaseController
 	 *我的资讯页
 	 */
 	public function actionMine(){
+		//获取当前页，默认是1
+		$curPage = Yii::$app->request->get('page',1);
+		//查询条件
+		$cond = ['user_id' => Yii::$app->user->identity->id];
+		$res = PostsForm::getList($cond,$curPage,$this->limit);
+
+		$result['title'] = $this->title?:"我的资讯";
+		$result['body'] = $res['data']?:[];
+		//是否显示分页
+		if($this->page){
+			$pages = new Pagination(['totalCount'=>$res['count'], 'pageSize'=>$res['pageSize']]);
+			$result['page'] = $pages;
+		}
+		//var_dump($result);exit;
+		return $this->render('mine',['data' => $result]);
+	}
+
+	/**
+	 *我的资讯页
+	 */
+	public function actionMineOld(){
 		$model = new PostsForm();
 		$userId = Yii::$app->user->identity->id;
 		$posts = $model->getPostsByUserId($userId);
