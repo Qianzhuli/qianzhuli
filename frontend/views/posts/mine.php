@@ -61,9 +61,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			<span><?= Yii::t('common','Matters Need Attention') ?></span>
 		</div>
 		<div class="panel-body">
-			<p>1. 已审核通过的资讯不可再次修改</p>
-			<p>2. 审核中的资讯如修改，将重新审核</p>
-			<p>3. 最终解释权归本网站所有</p>
+			<p>1. 已审核通过的资讯将展示在资讯页</p>
+			<p>2. 已审核通过的资讯不可修改</p>
+			<p>3. 审核中的资讯如修改，将重新审核</p>
+			<p>4. 最终解释权归本网站所有</p>
 		</div>
 	</div>
 </div>

@@ -78,7 +78,16 @@ class PostsController extends BaseController
 		$Extendsmodel = new PostExtendsModel();
 		$Extendsmodel->upCounter(['post_id' => $id], 'browser', 1);
 
-		return $this->render('view',['post' => $post]);
+		//右侧热点资讯，按照浏览量排
+		//获取当前页，默认是1
+		$curPage = Yii::$app->request->get('page',1);
+		//查询条件
+		$cond = ['is_valid' => PostsModel::IS_VALID];
+		$this->limit = 12;
+		$res = PostsForm::getList($cond,$curPage,$this->limit);
+		//var_dump($res['data']);exit;
+
+		return $this->render('view',['post' => $post, 'data' => $res['data']]);
 	}
 
 	/**
@@ -102,16 +111,6 @@ class PostsController extends BaseController
 		return $this->render('mine',['data' => $result]);
 	}
 
-	/**
-	 *我的资讯页
-	 */
-	public function actionMineOld(){
-		$model = new PostsForm();
-		$userId = Yii::$app->user->identity->id;
-		$posts = $model->getPostsByUserId($userId);
-
-		return $this->render('mine',['posts' => $posts]);
-	}
 
 	public function actionUpload($id){
 		

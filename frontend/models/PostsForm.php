@@ -181,6 +181,7 @@ class PostsForm extends Model
 
     /*
      *获取资讯ByUserId
+     *暂时没在用，可以用getList方法传参进去的方式实现
      */
     public static function getPostsByUserId($userId)
     {
@@ -194,7 +195,7 @@ class PostsForm extends Model
     }
 
     /*
-     *获取资讯列表
+     *获取资讯列表,限制条件写在$cond里
      */
     public static function getList($cond, $curPage = 1, $pageSize = 5, $orderBy = ['id' => SORT_DESC])
     {

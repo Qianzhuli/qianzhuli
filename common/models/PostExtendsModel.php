@@ -51,7 +51,7 @@ class PostExtendsModel extends BaseModel
     }
 
     /**
-     * 更新文章统计
+     * 更新文章统计,每次阅读+1
      */
     public function upCounter($cond, $attibute, $num)
     {
