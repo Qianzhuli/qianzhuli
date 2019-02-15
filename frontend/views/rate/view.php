@@ -7,7 +7,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?php if (isset($data['error'])) {?>
-	<h1>信息采集中...</h1>
+	<h1><?= $data['org_name'] ?>信息正在采集中，就快有啦...</h1>
 <?php }else {?>
 	<div class="row">
 		<div class="col-lg-9">

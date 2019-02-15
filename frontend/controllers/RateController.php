@@ -42,8 +42,10 @@ class RateController extends BaseController
 	public function actionView($org_name)
 	{
 		$data = OrgsModel::find()->where(['org_name' => $org_name])->asArray()->one();
-		if (!$data)
+		if (!$data) {
+			$data['org_name'] = $org_name;
 			$data['error'] = '信息采集中...';
+		}
 		return $this->render('view', ['data' => $data]);
 	}
 
