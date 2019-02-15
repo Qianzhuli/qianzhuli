@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 $this->title = Yii::t('common','Rating');
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -36,14 +38,14 @@ $this->params['breadcrumbs'][] = $this->title;
 				<?php foreach($data as $key => $value): ?>
 				<tr>
 					<td><?= $key+1 ?></td>
-					<td><a href="#"><?= $value['org_name'] ?></a></td>
+					<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
 					<td style="font-weight: bold;"><?= $value['rate'] ?></td>
 					<td style="color: #bd0000;"><?= $value['average_income'] ?></td>
 					<td><?= $value['build_time'] ?></td>
 					<td><?= $value['backgroud'] ?></td>
 					<td style="color: red;"><?= $value['hot'] ?></td>
-					<td><?= $value['high_praise_rate'] ?></td>
-					<td><a href="#">了解更多</a></td>
+					<td><?= $value['high_praise'] ?></td>
+					<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>">了解更多</a></td>
 				</tr>
 				<?php endforeach;?> 
 			</tbody>

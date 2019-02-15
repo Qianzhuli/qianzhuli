@@ -51,4 +51,5 @@ return [
 	'The sponsorship fee is 50 yuan and above, we will show your name, personal website and so on to the list of individual sponsors.' => '赞助费用在 50 元及以上，我们会将您的姓名、个人网址等展示到赞助者列表中。',
 	'List of sponsors' => '赞助者列表',
 	'Hot spot information' => '热点资讯',
+	'Platform for details' => '平台详情',
 ];
