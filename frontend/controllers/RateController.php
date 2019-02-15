@@ -78,7 +78,8 @@ class RateController extends BaseController
 	 */
 	private function _getRateByPHP()
 	{
-		$url = 'http://www.rong360.com/licai/netloan/ajaxnetloanrating';
+		$res = OrgsModel::find()->where(['org_name' => 'RateUrl'])->asArray()->one();
+		$url = $res['content'];
 		$ch = curl_init();
 		curl_setopt($ch,CURLOPT_URL,$url);
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
