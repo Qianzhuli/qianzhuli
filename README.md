@@ -20,22 +20,22 @@
 
 ### 网站部分展示
 #### 评级页(数据来源于爬虫，暂时用数据库按日期缓存，后续迁移至redis)：
-![123](46AA39E4D4B64CDAA13A313C1C91AF30)
+![123](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/123.png)
 
 #### 资讯列表页(支持分页)：
-![fs](E5B44D1E205E4FFFB6011961C009B558)
+![fs](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/fs.png)
 
 #### 资讯详情页：
-![xiangqing](5ADC4AC86C664B6FBC46CDEF95D948B4)
+![xiangqing](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/xiangqing.png)
 
 #### 资讯创建页（登录后可创建资讯，创建后自动提交后台审核，审核通过后按时间顺序展示在资讯页）：
-![xx](74A99F2C1D2D4399BF65671C321058E8)
+![xx](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/xx.png)
 
 #### 用户个人资讯页（用户创建的资讯会在这里，并显示审核状态，后续做编辑功能）
-![mine](2911FE59B11746E3944536B08C349CBC)
+![mine](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/mine.png)
 
 #### 赞助页（emmmm...）
-![dashang](ADF433ED8B754656ACAC0683A133C178)
+![dashang](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/dashang.png)
 
 #### 登录、注册、个人中心等页面就不展示啦，反正大家也知道我做的挺好看的。。。hhhhh
 （未完待续）
