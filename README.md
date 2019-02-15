@@ -25,10 +25,10 @@
 #### 资讯列表页(支持分页)：
 ![fs](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/fs.png)
 
-#### 资讯详情页：
+#### 资讯详情页（支持阅读量统计、资讯关联标签展示等）：
 ![xiangqing](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/xiangqing.png)
 
-#### 资讯创建页（登录后可创建资讯，创建后自动提交后台审核，审核通过后按时间顺序展示在资讯页）：
+#### 资讯创建页（登录后可创建资讯，创建后自动提交后台审核，审核通过后按时间顺序展示在资讯页。支持添加预览图，支持所见即所得的编辑内容，支持给资讯加标签、分类）：
 ![xx](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/xx.png)
 
 #### 用户个人资讯页（用户创建的资讯会在这里，并显示审核状态，后续做编辑功能）
