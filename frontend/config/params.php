@@ -8,4 +8,9 @@ return [
     	'SiteTitle1' => '/statics/images/webImages/SiteTitle1.jpg',
     	'PayImg' => '/statics/images/webImages/PayImg.jpg',
     ],
+    'banner' => [
+    	'b_0' => '/statics/images/banner/b_0.jpg',
+    	'b_1' => '/statics/images/banner/b_1.jpg',
+    	'b_2' => '/statics/images/banner/b_2.jpg',
+    ],
 ];

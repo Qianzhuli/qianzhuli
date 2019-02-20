@@ -1,17 +1,32 @@
 <?php
 
+use frontend\widgets\banner\BannerWidgets;
+use frontend\widgets\posts\PostsWidgets;
+
+
 /* @var $this yii\web\View */
 
 $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
 ?>
+
 <div class="site-index">
 
-    <div class="jumbotron">
+    <div>
         <?= '<img src="' . Yii::$app->params['webImages']['SiteTitle1'] . '" class="site-index-jumbotron-img">'; ?>
     </div>
 
     <div class="body-content">
-
+        <div class="row">
+            <div class="col-lg-9">
+                <!-- 图片轮播组件 frontend/widgets/bannner -->
+                <?= BannerWidgets::widget() ?>
+                <!-- 文章列表组件 frontend/widgets/posts -->
+                <?= PostsWidgets::widget() ?>
+            </div>
+            <div class="col-lg-3">
+                这的内容还没写
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
@@ -80,3 +95,7 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
 
     </div>
 </div>
+
+
+
+

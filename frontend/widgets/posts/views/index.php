@@ -4,7 +4,7 @@ use yii\widgets\LinkPager;
 ?>
 
 <div class="row">
-	<div class="col-lg-9">
+	<div class="col-lg-12">
 		<div class="panel">
 		    <div class="panel-title box-title">
 		        <span><?=$data['title']?></span>
@@ -48,8 +48,5 @@ use yii\widgets\LinkPager;
 		    <div class="page"><?=LinkPager::widget(['pagination' => $data['page']]);?></div>
 		    <?php endif;?>
 		</div>
-	</div>
-	<div class="col-lg-3">
-		
 	</div>
 </div>
