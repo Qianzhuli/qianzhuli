@@ -16,6 +16,7 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
     </div>
 
     <div class="body-content">
+        <!-- 第一部分 -->
         <div class="row">
             <div class="col-lg-9">
                 <!-- 图片轮播组件 frontend/widgets/bannner -->
@@ -23,10 +24,24 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
                 <!-- 文章列表组件 frontend/widgets/posts -->
                 <?= PostsWidgets::widget() ?>
             </div>
-            <div class="col-lg-3">
-                这的内容还没写
+            <div class="col-lg-3" style="text-align: center;">
+                <h1>这</h1>
+                <h1>的</h1>
+                <h1>内</h1>
+                <h1>容</h1>
+                <h1>还</h1>
+                <h1>没</h1>
+                <h1>写</h1>
+                <h1>&nbsp;</h1>
+                <h1>后</h1>
+                <h1>续</h1>
+                <h1>会</h1>
+                <h1>补</h1>
+                <h1>上</h1>
+                <h1>的</h1>
             </div>
         </div>
+        <!-- 第二部分 -->
         <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
