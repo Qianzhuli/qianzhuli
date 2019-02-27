@@ -28,7 +28,8 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => '<i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Qianzhuli'),
+        'brandLabel' => '<img src="' . Yii::$app->params['layout']['logo'] . '" class="layout-logo">',
+        //'brandLabel' => '<i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Qianzhuli'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',

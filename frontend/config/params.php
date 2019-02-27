@@ -13,4 +13,7 @@ return [
     	'b_1' => '/statics/images/banner/b_1.jpg',
     	'b_2' => '/statics/images/banner/b_2.jpg',
     ],
+    'layout' => [
+        'logo' => '/statics/images/layout/logo.png',
+    ],
 ];

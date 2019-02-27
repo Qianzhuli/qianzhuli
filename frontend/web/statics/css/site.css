@@ -124,12 +124,17 @@ a.desc:after {
 
 /*layout main.php*/
 
+.layout-logo {
+    height: 45px;
+    width: 230px;
+}
+
 .navbar-inverse {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     border-top: 0px dashed gray;
     border-left: 0px dashed gray;
     border-right: 0px dashed gray;
-    border-bottom: 1px dotted gray;
+    border-bottom: 2px solid #2472bc;
 }
 
 .navbar-inverse .navbar-brand {
