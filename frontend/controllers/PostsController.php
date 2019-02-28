@@ -6,6 +6,7 @@ use frontend\controllers\base\BaseController;
 use frontend\models\PostsForm;
 use common\models\PostsModel;
 use common\models\CatsModel;
+use frontend\models\PostCommentsForm;
 use yii\web\UploadedFile;
 use frontend\models\Upload;
 use common\models\PostExtendsModel;
@@ -70,8 +71,21 @@ class PostsController extends BaseController
 	 *资讯展示
 	 */
 	public function actionView($id){
-		$model = new PostsForm();
-		$post = $model->getPostById($id);
+		$model = new PostCommentsForm();
+		//先看有没有提交评论
+		if($model->load(Yii::$app->request->post())){
+			//用Yii::$app->request->post()获取表单传的数据,不加参数的话是个数组
+			//var_dump(Yii::$app->request->post()['PostCommentsForm']['content']);exit;
+			$SubmitComment = Yii::$app->request->post()['PostCommentsForm']['content'];
+			if($model->saveComment($SubmitComment,$id,Yii::$app->user->identity->username)){
+				//跳回本頁面
+				echo "1111";exit;
+			}else{
+				//報錯
+			}
+		}
+		$PostsFormModel = new PostsForm();
+		$post = $PostsFormModel->getPostById($id);
 		//var_dump($post['extends']);exit;
 
 		//文章统计
@@ -87,7 +101,9 @@ class PostsController extends BaseController
 		$res = PostsForm::getList($cond,$curPage,$this->limit);
 		//var_dump($res['data']);exit;
 
-		return $this->render('view',['post' => $post, 'data' => $res['data']]);
+		$comments = $model->getComments($id);
+
+		return $this->render('view',['post' => $post, 'data' => $res['data'], 'model' => $model, 'comments' => $comments]);
 	}
 
 	/**

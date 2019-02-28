@@ -52,4 +52,5 @@ return [
 	'List of sponsors' => '赞助者列表',
 	'Hot spot information' => '热点资讯',
 	'Platform for details' => '平台详情',
+	'Comments' => '有话要说:',
 ];

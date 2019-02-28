@@ -196,6 +196,27 @@ a.desc:after {
     border: 1px;
 }
 
+.post-view-writeComments {
+    padding-top: 15px;
+}
+
+.post-view-writeComments > form > div > label {
+    font-size: 20px;
+    color: gray;
+}
+
+.post-view-writeComments > form > div > button {
+    width: 100%;
+}
+
+.allComments {
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+
+
+
 /*我的资讯页*/
 .posts-mine-table tr th {
     height: 50px;

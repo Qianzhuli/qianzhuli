@@ -1,4 +1,7 @@
 <?php
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
+
 $this->title = $post['title'];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('common','Information'),'url' => ['posts/index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,6 +25,32 @@ $this->params['breadcrumbs'][] = $this->title;
 				<span><a href="#"><?= $tag ?></a></span>
 				<?php endforeach;?>
 		</div>
+		<!--写评论区-->
+		<div class="post-view-writeComments">
+			<?php $form = ActiveForm::begin(["options" => ["enctype" => "multipart/form-data"]]) ?>
+
+			<?= $form->field($model, 'content')->textarea(['rows' => '5']) ?>
+			<div class="form-group">
+				<?= Html::submitButton(Yii::t('common','Submit'),['class' => 'btn btn-success']) ?>
+			</div>
+
+			<?php ActiveForm::end() ?>
+		</div>
+		<!--展示评论区-->
+		<div class="allComments">全部评论:</div>
+		<div class="post-view-comments">
+			<table class="table table-striped">
+				<?php foreach ($comments as $comment):?>
+					<tr>
+						<td><i class="fa fa-user" aria-hidden="true"></i> &nbsp;<?= $comment['user'].':' ?></td>
+					</tr>
+					<tr>
+						<td><?= $comment['content'] ?></td>
+					</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
+
 	</div>
 	<div class="col-lg-3">
 		<div class="panel-title box-title">
