@@ -23,6 +23,7 @@ class PostCommentsForm extends Model
 		$commentsModel->content = $comment;
 		$commentsModel->post_id = $post_id;
 		$commentsModel->user = $user;
+		$commentsModel->create_at = time();
 		if ($commentsModel->save()) {
 			return 1;
 		}

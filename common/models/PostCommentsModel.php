@@ -32,6 +32,7 @@ class PostCommentsModel extends BaseModel
             [['post_id'], 'integer'],
             [['content'], 'string'],
             [['user'], 'string', 'max' =>255],
+            [['create_at'], 'integer'],
         ];
     }
 

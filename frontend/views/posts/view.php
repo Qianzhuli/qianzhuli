@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<table class="table table-striped">
 				<?php foreach ($comments as $comment):?>
 					<tr>
-						<td><i class="fa fa-user" aria-hidden="true"></i> &nbsp;<?= $comment['user'].':' ?></td>
+						<td><span><i class="fa fa-user" aria-hidden="true"></i> &nbsp;<?= $comment['user'].':' ?></span><span style="float: right; font-size: 14px; color: gray;"><?= date('Y/m/d H:i:s', $comment['create_at']); ?></span></td>
 					</tr>
 					<tr>
 						<td><?= $comment['content'] ?></td>
@@ -51,6 +51,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			</table>
 		</div>
 
+		<!-- 底部banner -->
+		<div>
+        	<?= '<img src="' . Yii::$app->params['webImages']['SiteTitle1'] . '" class="site-index-jumbotron-img">'; ?>
+    	</div>
 	</div>
 	<div class="col-lg-3">
 		<div class="panel-title box-title">

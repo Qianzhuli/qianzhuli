@@ -72,18 +72,6 @@ class PostsController extends BaseController
 	 */
 	public function actionView($id){
 		$model = new PostCommentsForm();
-		//先看有没有提交评论
-		if($model->load(Yii::$app->request->post())){
-			//用Yii::$app->request->post()获取表单传的数据,不加参数的话是个数组
-			//var_dump(Yii::$app->request->post()['PostCommentsForm']['content']);exit;
-			$SubmitComment = Yii::$app->request->post()['PostCommentsForm']['content'];
-			if($model->saveComment($SubmitComment,$id,Yii::$app->user->identity->username)){
-				//跳回本頁面
-				echo "1111";exit;
-			}else{
-				//報錯
-			}
-		}
 		$PostsFormModel = new PostsForm();
 		$post = $PostsFormModel->getPostById($id);
 		//var_dump($post['extends']);exit;
@@ -102,6 +90,34 @@ class PostsController extends BaseController
 		//var_dump($res['data']);exit;
 
 		$comments = $model->getComments($id);
+
+		//先看有没有提交评论
+		if($model->load(Yii::$app->request->post())){
+			//用Yii::$app->request->post()获取表单传的数据,不加参数的话是个数组
+			//var_dump(Yii::$app->request->post()['PostCommentsForm']['content']);exit;
+			$SubmitComment = Yii::$app->request->post()['PostCommentsForm']['content'];
+			if (!empty($SubmitComment)) {
+				if (!empty(Yii::$app->user->identity->username)) {
+					$user = Yii::$app->user->identity->username;
+				}else {
+					$user = '游客';
+				}
+				if($model->saveComment($SubmitComment,$id,$user)){
+					//跳回本頁面
+					//重新获取新的评论
+					$comments = $model->getComments($id);
+					//刷新model
+					$model = new PostCommentsForm();
+					return $this->render('view',['post' => $post, 'data' => $res['data'], 'model' => $model, 'comments' => $comments]);
+				}else{
+					//報錯
+					echo '保存评论失败';
+				}
+				//刷新model
+				$model = new PostCommentsForm();
+				return $this->render('view',['post' => $post, 'data' => $res['data'], 'model' => $model, 'comments' => $comments]);
+			}
+		}
 
 		return $this->render('view',['post' => $post, 'data' => $res['data'], 'model' => $model, 'comments' => $comments]);
 	}
