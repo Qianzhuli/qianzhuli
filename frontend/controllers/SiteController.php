@@ -89,6 +89,7 @@ class SiteController extends BaseController
             //var_dump($cache->get($key));
         //}
         //exit;
+        //test
         return $this->render('index');
     }
 
