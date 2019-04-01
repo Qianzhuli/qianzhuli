@@ -77,6 +77,18 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        //$cache = Yii::$app->cache;
+        //$key = 'test7';
+        //$vue = array('first' => '1','second' => '2');
+        //if ($val = $cache->get($key)) {
+        //    var_dump($val);
+        //}else{
+            //set缓存并设置超时时间
+        //    $cache->set($key,$vue,60);
+        //    echo "成功设置key";
+            //var_dump($cache->get($key));
+        //}
+        //exit;
         return $this->render('index');
     }
 

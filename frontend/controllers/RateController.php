@@ -18,7 +18,8 @@ class RateController extends BaseController
 	public function actionIndex()
 	{	
 		//先读数据库缓存，未命中再爬虫
-		$date = date('Ymd');
+		//$date = date('Ymd');
+		$date = 20190304;
 		$res = OrgsCacheModel::find()->where(['date' => $date])->one();
 		if (!empty($res)) {
 			$resArray = unserialize($res['data']);
