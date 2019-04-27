@@ -18,37 +18,164 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 </div>
-<div class="row table-responsive">
-	<div class="col-lg-12">
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>综合排名</th>
-					<th>平台</th>
-					<th>评级</th>
-					<th>平均收益</th>
-					<th>上线时间</th>
-					<th>平台背景</th>
-					<th>人气指数</th>
-					<th>网友评价</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach($data as $key => $value): ?>
-				<tr>
-					<td><?= $key+1 ?></td>
-					<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
-					<td style="font-weight: bold;"><?= $value['rate'] ?></td>
-					<td style="color: #bd0000;"><?= $value['average_income'] ?></td>
-					<td><?= $value['build_time'] ?></td>
-					<td><?= $value['backgroud'] ?></td>
-					<td style="color: red;"><?= $value['hot'] ?></td>
-					<td><?= $value['high_praise'] ?></td>
-					<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>">了解更多</a></td>
-				</tr>
-				<?php endforeach;?> 
-			</tbody>
-		</table>
-	</div>
+<div>
+	<!--起空格作用-->
+	<p> </p>
 </div>
+<div class="row">
+	<div class="col-lg-12">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active" style="font-size: 17px;"><a href="#qianzhuli" data-toggle="tab">钱助理</a></li>
+					<li style="font-size: 17px;"><a href="#rong360" data-toggle="tab">融360</a></li>
+					<li style="font-size: 17px;"><a href="#wangdaitianyan" data-toggle="tab">网贷天眼</a></li>
+					<li style="font-size: 17px;"><a href="#wangdaizhijia" data-toggle="tab">网贷之家</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="qianzhuli">
+						<div class="row table-responsive">
+							<div class="col-lg-12">
+								<table class="table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>综合排名</th>
+											<th>平台</th>
+											<th>评级</th>
+											<th>平均收益</th>
+											<th>上线时间</th>
+											<th>平台背景</th>
+											<th>人气指数</th>
+											<th>网友评价</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($data as $key => $value): ?>
+										<tr>
+											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
+											<td style="font-weight: bold;"><?= $value['rate'] ?></td>
+											<td style="color: #bd0000;"><?= $value['average_income'] ?></td>
+											<td><?= $value['build_time'] ?></td>
+											<td><?= $value['backgroud'] ?></td>
+											<td style="color: red;"><?= $value['hot'] ?></td>
+											<td><?= $value['high_praise'] ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>">了解更多</a></td>
+										</tr>
+										<?php endforeach;?> 
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="rong360">
+						<div class="row table-responsive">
+							<div class="col-lg-12">
+								<table class="table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>综合排名</th>
+											<th>平台</th>
+											<th>评级</th>
+											<th>平均收益</th>
+											<th>上线时间</th>
+											<th>平台背景</th>
+											<th>人气指数</th>
+											<th>网友评价</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($data as $key => $value): ?>
+										<tr>
+											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
+											<td style="font-weight: bold;"><?= $value['rate'] ?></td>
+											<td style="color: #bd0000;"><?= $value['average_income'] ?></td>
+											<td><?= $value['build_time'] ?></td>
+											<td><?= $value['backgroud'] ?></td>
+											<td style="color: red;"><?= $value['hot'] ?></td>
+											<td><?= $value['high_praise'] ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>">了解更多</a></td>
+										</tr>
+										<?php endforeach;?> 
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="wangdaitianyan">
+						<div class="row table-responsive">
+							<div class="col-lg-12">
+								<table class="table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>综合排名</th>
+											<th>平台</th>
+											<th>评级</th>
+											<th>平均收益</th>
+											<th>上线时间</th>
+											<th>平台背景</th>
+											<th>人气指数</th>
+											<th>网友评价</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($data as $key => $value): ?>
+										<tr>
+											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
+											<td style="font-weight: bold;"><?= $value['rate'] ?></td>
+											<td style="color: #bd0000;"><?= $value['average_income'] ?></td>
+											<td><?= $value['build_time'] ?></td>
+											<td><?= $value['backgroud'] ?></td>
+											<td style="color: red;"><?= $value['hot'] ?></td>
+											<td><?= $value['high_praise'] ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>">了解更多</a></td>
+										</tr>
+										<?php endforeach;?> 
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="wangdaizhijia">
+						<div class="row table-responsive">
+							<div class="col-lg-12">
+								<table class="table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>综合排名</th>
+											<th>平台</th>
+											<th>评级</th>
+											<th>平均收益</th>
+											<th>上线时间</th>
+											<th>平台背景</th>
+											<th>人气指数</th>
+											<th>网友评价</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($data as $key => $value): ?>
+										<tr>
+											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
+											<td style="font-weight: bold;"><?= $value['rate'] ?></td>
+											<td style="color: #bd0000;"><?= $value['average_income'] ?></td>
+											<td><?= $value['build_time'] ?></td>
+											<td><?= $value['backgroud'] ?></td>
+											<td style="color: red;"><?= $value['hot'] ?></td>
+											<td><?= $value['high_praise'] ?></td>
+											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>">了解更多</a></td>
+										</tr>
+										<?php endforeach;?> 
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+	

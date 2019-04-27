@@ -319,4 +319,12 @@ a.desc:after {
     border-color: #102c71;
 }
 
-//评级页
+/*评级页*/
+.nav-tabs {
+    border-bottom:2px solid #2472bc;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #ffffff;
+    background-color: #2472bc;
+}

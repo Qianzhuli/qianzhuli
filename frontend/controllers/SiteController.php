@@ -77,6 +77,7 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        //redis使用方法
         //$cache = Yii::$app->cache;
         //$key = 'test7';
         //$vue = array('first' => '1','second' => '2');
