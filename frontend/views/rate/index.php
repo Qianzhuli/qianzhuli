@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($data as $key => $value): ?>
+										<?php foreach($data1 as $key => $value): ?>
 										<tr>
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
 											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($data as $key => $value): ?>
+										<?php foreach($data2 as $key => $value): ?>
 										<tr>
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
 											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
@@ -121,7 +121,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($data as $key => $value): ?>
+										<?php foreach($data3 as $key => $value): ?>
 										<tr>
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
 											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>
@@ -157,7 +157,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($data as $key => $value): ?>
+										<?php foreach($data4 as $key => $value): ?>
 										<tr>
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $key+1 ?></td>
 											<td><a href="<?=Url::to(['rate/view','org_name'=>$value['org_name']])?>"><?= $value['org_name'] ?></a></td>

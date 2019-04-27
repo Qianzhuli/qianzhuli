@@ -42,6 +42,7 @@ class OrgsCacheModel extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'date' => Yii::t('app', 'Date'),
             'data' => Yii::t('app', 'Data'),
+            'from' => Yii::t('app', 'From'),
         ];
     }
 }

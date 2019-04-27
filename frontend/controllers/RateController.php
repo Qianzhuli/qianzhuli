@@ -17,24 +17,75 @@ class RateController extends BaseController
 	 */
 	public function actionIndex()
 	{	
-		//先读数据库缓存，未命中再爬虫
-		//$date = date('Ymd');
-		$date = 20190304;
-		$res = OrgsCacheModel::find()->where(['date' => $date])->one();
-		if (!empty($res)) {
-			$resArray = unserialize($res['data']);
-		}else {
-			//调用go接口去获取评级数据,php后备
-			$response = $this->_getRateByGolang();
-			//处理抓回来的数据
-			$resArray = $this->_formateRateRes($response);
-			//将处理好的数据序列化后存库
-			$model = new OrgsCacheModel();
-			$model->date = $date;
-			$model->data = serialize($resArray);
-			$model->save();
+		//先读redis缓存
+		$cache = Yii::$app->cache;
+		$date = date('Ymd');
+
+		//钱助理
+		$key1 = 'RateQianzhuli' . $date;
+		if ($cache->exists($key1)) {
+			$res1 = $cache->get($key1);
+		}else{
+			$date = 20190304;
+			$res1 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 1])->one();
+			$cache->set($key1,$res1,86400);
 		}
-		return $this->render('index',['data' => $resArray]);
+		//判断是否取到，未取到再去爬
+		if (!empty($res1)) {
+			$resArray1 = unserialize($res1['data']);
+		}else {
+			//去爬代码并存库
+		}
+
+		//融360
+		$key2 = 'RateRong360' . $date;
+		if ($cache->exists($key2)) {
+			$res2 = $cache->get($key2);
+		}else{
+			$date = 20190304;
+			$res2 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 2])->one();
+			$cache->set($key2,$res2,86400);
+		}
+		//判断是否取到，未取到再去爬
+		if (!empty($res2)) {
+			$resArray2 = unserialize($res2['data']);
+		}else {
+			//去爬代码并存库
+		}
+
+		//网贷天眼
+		$key3 = 'RateWangdaitianyan' . $date;
+		if ($cache->exists($key3)) {
+			$res3 = $cache->get($key3);
+		}else{
+			$date = 20190304;
+			$res3 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 3])->one();
+			$cache->set($key3,$res3,86400);
+		}
+		//判断是否取到，未取到再去爬
+		if (!empty($res3)) {
+			$resArray3 = unserialize($res3['data']);
+		}else {
+			//去爬代码并存库
+		}
+
+		//网贷之家
+		$key4 = 'RateQianzhuli' . $date;
+		if ($cache->exists($key4)) {
+			$res4 = $cache->get($key4);
+		}else{
+			$date = 20190304;
+			$res4 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 4])->one();
+			$cache->set($key4,$res4,86400);
+		}
+		//判断是否取到，未取到再去爬
+		if (!empty($res4)) {
+			$resArray4 = unserialize($res4['data']);
+		}else {
+			//去爬代码并存库
+		}
+		
+		return $this->render('index',['data1' => $resArray1, 'data2' => $resArray2, 'data3' => $resArray3, 'data4' => $resArray4]);
 	}	
 
 	/**
