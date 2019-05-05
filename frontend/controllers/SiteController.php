@@ -7,6 +7,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\PostsForm;
+use common\models\PostsModel;
 use frontend\controllers\base\BaseController;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -91,7 +93,24 @@ class SiteController extends BaseController
         //}
         //exit;
         //test
-        return $this->render('index');
+        //获取当前页
+        $curPage = Yii::$app->request->get('page',1);
+        //查询条件
+        $limit = 9;
+        $cond = ['is_valid' => PostsModel::IS_VALID, 'type' => 0];
+        $res1 = PostsForm::getList($cond,$curPage,$limit);
+        $cond = ['is_valid' => PostsModel::IS_VALID, 'type' => 1];
+        $res2 = PostsForm::getList($cond,$curPage,$limit);
+        $cond = ['is_valid' => PostsModel::IS_VALID, 'type' => 2];
+        $res3 = PostsForm::getList($cond,$curPage,$limit);
+
+        $data = [
+            'data1' => $res1['data'],
+            'data2' => $res2['data'],
+            'data3' => $res3['data'],
+        ];
+
+        return $this->render('index',['data' => $data]);
     }
 
     /**

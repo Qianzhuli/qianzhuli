@@ -53,4 +53,7 @@ return [
 	'Hot spot information' => '热点资讯',
 	'Platform for details' => '平台详情',
 	'Comments' => '有话要说:',
+	'Loan' => '贷款',
+	'Credit' => '信用卡',
+	'Financial' => '理财',
 ];

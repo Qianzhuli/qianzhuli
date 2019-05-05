@@ -22,11 +22,25 @@ class PostsController extends BaseController
 	public $limit = 5;
 	public $page = true;
 	/**
-	 *文章列表页
+	 *贷款资讯页
 	 */
-	public function actionIndex()
+	public function actionLoan()
 	{
-		return $this->render('index');
+		return $this->render('loan');
+	}
+	/**
+	 *理财资讯页
+	 */
+	public function actionFinancial()
+	{
+		return $this->render('financial');
+	}
+	/**
+	 *信用卡资讯页
+	 */
+	public function actionCredit()
+	{
+		return $this->render('credit');
 	}
 
 	/**
@@ -63,7 +77,7 @@ class PostsController extends BaseController
 		//去数据库取资讯名，展示在前端
 		$model = new PostsForm();
 		$post = $model->getPostById(Yii::$app->request->get()['id']);
-		$title = $post['title'];
+		//var_dump($post);exit;
 		return $this->render('check',['post' => $post]);
 	}
 
@@ -85,6 +99,7 @@ class PostsController extends BaseController
 		$curPage = Yii::$app->request->get('page',1);
 		//查询条件
 		$cond = ['is_valid' => PostsModel::IS_VALID];
+		//$cond = [];
 		$this->limit = 12;
 		$res = PostsForm::getList($cond,$curPage,$this->limit);
 		//var_dump($res['data']);exit;

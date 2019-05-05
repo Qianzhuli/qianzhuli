@@ -13,7 +13,7 @@ use Yii;
 /**
  * 资讯列表组件
  */
-class PostsWidgets extends Widget
+class FinancialPostsWidgets extends Widget
 {	
 	//资讯标题
 	public $title = '';
@@ -29,11 +29,11 @@ class PostsWidgets extends Widget
 		//获取当前页，默认是1
 		$curPage = Yii::$app->request->get('page',1);
 		//查询条件
-		$cond = ['is_valid'=>PostsModel::IS_VALID];
+		$cond = ['is_valid'=>PostsModel::IS_VALID, 'cat_id' => 6];
 		$res = PostsForm::getList($cond,$curPage,$this->limit);
 
-		$result['title'] = $this->title?:"最新资讯";
-		$result['more'] = Url::to(['posts/index']);
+		$result['title'] = $this->title?:"理财资讯";
+		$result['more'] = Url::to(['posts/financial']);
 		$result['body'] = $res['data']?:[];
 		//是否显示分页
 		if($this->page){
