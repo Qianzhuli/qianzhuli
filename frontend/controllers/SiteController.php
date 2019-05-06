@@ -96,7 +96,7 @@ class SiteController extends BaseController
         //获取当前页
         $curPage = Yii::$app->request->get('page',1);
         //查询条件
-        $limit = 9;
+        $limit = 11;
         $cond = ['is_valid' => PostsModel::IS_VALID, 'type' => 0];
         $res1 = PostsForm::getList($cond,$curPage,$limit);
         $cond = ['is_valid' => PostsModel::IS_VALID, 'type' => 1];

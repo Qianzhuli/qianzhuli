@@ -12,16 +12,16 @@ use yii\widgets\LinkPager;
 		        <span class="pull-right"><a href="<?=$data['more']?>" class="font-12">更多»</a></span>
 		        <?php endif;?>
 		    </div>
-		    <div class="new-list">
+		 	<div class="new-list">
 		    <?php foreach ($data['body'] as $list):?>
 		        <div class="panel-body border-bottom">      
 		            <div class="row">
-		                <div class="col-lg-4 label-img-size">
-		                    <a href="<?=Url::to(['posts/view','id'=>$list['id']])?>" class="post-label">
+		                <div class="col-lg-2 label-img-size">
+		                    <a href="<?=Url::to(['posts/view','id'=>$list['id']])?>" class="post-label-mine">
 		                        <img src="<?= $list['label_img'] ?>" alt="<?=$list['title']?>">
 		                    </a>
 		                </div>
-		                <div class="col-lg-8 btn-group">
+		                <div class="col-lg-10 btn-group">
 		                    <h1><a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><?=$list['title']?></a></h1>
 		                    <span class="post-tags">
 		                        <span class="glyphicon glyphicon-user"></span><a href="<?=Url::to(['member/index','id'=>$list['user_id']])?>"><?=$list['user_name']?></a>&nbsp;
@@ -30,7 +30,7 @@ use yii\widgets\LinkPager;
 		                        <span class="glyphicon glyphicon-comment"></span><a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><?=isset($list['extend']['comment'])?$list['extend']['comment']:0?></a>
 		                    </span>
 		                    <p class="post-content"><?=$list['summary']?></p>
-		                    <a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><button class="btn btn-warning no-radius btn-sm pull-right">阅读全文</button></a>
+		                    <a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><button class="btn no-radius btn-warning btn-sm pull-right-mine">阅读全文</button></a>
 		                </div>
 		            </div>
 		            <div class="tags">
@@ -45,7 +45,7 @@ use yii\widgets\LinkPager;
 		    <?php endforeach;?>            
 		    </div>
 		    <?php if($this->context->page):?>
-		    <div class="page"><?=LinkPager::widget(['pagination' => $data['page']]);?></div>
+		    	<div class="page"><?=LinkPager::widget(['pagination' => $data['page']]);?></div>
 		    <?php endif;?>
 		</div>
 	</div>

@@ -2,6 +2,7 @@
 
 use frontend\widgets\banner\BannerWidgets;
 use frontend\widgets\posts\PostsWidgets;
+use yii\helpers\Url;
 
 
 /* @var $this yii\web\View */
@@ -24,29 +25,29 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
             </div>
             <div class="col-lg-3" style="text-align: center;">
                 <ul id="myTab" class="nav nav-tabs">
-                    <li class="active"><a href="#news" data-toggle="tab">贷款</a></li>
-                    <li><a href="#posts" data-toggle="tab">理财</a></li>
-                    <li><a href="#platform" data-toggle="tab">信用卡</a></li>
+                    <li class="active"><a href="#news" data-toggle="tab">&nbsp;&nbsp;&nbsp;热点&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="#posts" data-toggle="tab">&nbsp;&nbsp;&nbsp;原创&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="#platform" data-toggle="tab">&nbsp;&nbsp;&nbsp;报告&nbsp;&nbsp;&nbsp;</a></li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade in active" id="news" style="text-align: left; padding: 15px;">
+                    <div class="tab-pane fade in active" id="news" style="text-align: left; padding: 10px;">
                         <?php if(!empty($data['data1'])){ ?>
                             <?php foreach ($data['data1'] as $p) { ?>
-                                <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<a href="view?id=<?= $p['id'] ?>"><?= $p['title']?></a></p>
+                                <p><i class="fa fa-hacker-news" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<a href="<?=Url::to(['posts/view','id'=>$p['id']])?>"><?= $p['title']?></a></p>
                             <?php } ?>
                         <?php } ?>
                     </div>
-                    <div class="tab-pane fade" id="posts" style="text-align: left; padding: 15px;">
+                    <div class="tab-pane fade" id="posts" style="text-align: left; padding: 10px;">
                         <?php if(!empty($data['data2'])){ ?>
                             <?php foreach ($data['data2'] as $p) { ?>
-                                <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<a href="view?id=<?= $p['id'] ?>"><?= $p['title']?></a></p>
+                                <p><i class="fa fa-hacker-news" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<a href="<?=Url::to(['posts/view','id'=>$p['id']])?>"><?= $p['title']?></a></p>
                             <?php } ?>
                         <?php } ?>
                     </div>
-                    <div class="tab-pane fade" id="platform" style="text-align: left; padding: 15px;">
+                    <div class="tab-pane fade" id="platform" style="text-align: left; padding: 10px;">
                         <?php if(!empty($data['data3'])){ ?>
                             <?php foreach ($data['data3'] as $p) { ?>
-                                <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<a href="view?id=<?= $p['id'] ?>"><?= $p['title']?></a></p>
+                                <p><i class="fa fa-hacker-news" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<a href="<?=Url::to(['posts/view','id'=>$p['id']])?>"><?= $p['title']?></a></p>
                             <?php } ?>
                         <?php } ?>
                     </div>
@@ -97,14 +98,6 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
                         <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
                     </div>
         </div>
-        <!-- 第三部分 -->
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- 文章列表组件 frontend/widgets/posts -->
-                <?= PostsWidgets::widget() ?>
-            </div>
-        </div>
-
     </div>
 </div>
 

@@ -26,21 +26,39 @@ class PostsController extends BaseController
 	 */
 	public function actionLoan()
 	{
-		return $this->render('loan');
+		$curPage = Yii::$app->request->get('page',1);
+		//查询条件
+		$cond = ['is_valid' => PostsModel::IS_VALID];
+		//$cond = [];
+		$this->limit = 12;
+		$res = PostsForm::getList($cond,$curPage,$this->limit);
+		return $this->render('loan',['data' => $res['data']]);
 	}
 	/**
 	 *理财资讯页
 	 */
 	public function actionFinancial()
 	{
-		return $this->render('financial');
+		$curPage = Yii::$app->request->get('page',1);
+		//查询条件
+		$cond = ['is_valid' => PostsModel::IS_VALID];
+		//$cond = [];
+		$this->limit = 12;
+		$res = PostsForm::getList($cond,$curPage,$this->limit);
+		return $this->render('financial',['data' => $res['data']]);
 	}
 	/**
 	 *信用卡资讯页
 	 */
 	public function actionCredit()
 	{
-		return $this->render('credit');
+		$curPage = Yii::$app->request->get('page',1);
+		//查询条件
+		$cond = ['is_valid' => PostsModel::IS_VALID];
+		//$cond = [];
+		$this->limit = 12;
+		$res = PostsForm::getList($cond,$curPage,$this->limit);
+		return $this->render('credit',['data' => $res['data']]);
 	}
 
 	/**

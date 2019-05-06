@@ -40,7 +40,7 @@ class LoanPostsWidgets extends Widget
 			$pages = new Pagination(['totalCount'=>$res['count'], 'pageSize'=>$res['pageSize']]);
 			$result['page'] = $pages;
 		}
-		//var_dump($result);exit;
+		//var_dump($result['body']);exit;
 		return $this->render('index',['data' => $result]);
 	}
 }

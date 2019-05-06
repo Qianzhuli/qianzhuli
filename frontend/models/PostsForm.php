@@ -108,7 +108,7 @@ class PostsForm extends Model
 		}
 	}
 
-	private function _getSummary($s = 0,$e = 50,$char = 'utf-8'){
+	private function _getSummary($s = 0,$e = 40,$char = 'utf-8'){
 		if(empty($this->content)){
 			return null;
 		}
@@ -211,6 +211,7 @@ class PostsForm extends Model
         $res = $model->getPages($query, $curPage, $pageSize);
         //格式化
         $res['data'] = self::_formatList($res['data']);
+        //var_dump($res['data']);exit;
 
         return $res;
     }

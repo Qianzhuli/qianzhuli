@@ -25,10 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
 	<div class="col-lg-12">
 				<ul id="myTab" class="nav nav-tabs">
-					<li class="active" style="font-size: 17px;"><a href="#qianzhuli" data-toggle="tab">钱助理</a></li>
-					<li style="font-size: 17px;"><a href="#rong360" data-toggle="tab">融360</a></li>
-					<li style="font-size: 17px;"><a href="#wangdaitianyan" data-toggle="tab">网贷天眼</a></li>
-					<li style="font-size: 17px;"><a href="#wangdaizhijia" data-toggle="tab">网贷之家</a></li>
+					<li class="active" style="font-size: 17px;width: 25%;text-align: center;"><a href="#qianzhuli" data-toggle="tab">钱助理</a></li>
+					<li style="font-size: 17px;width: 25%;text-align: center;"><a href="#rong360" data-toggle="tab">融360</a></li>
+					<li style="font-size: 17px;width: 25%;text-align: center;"><a href="#wangdaitianyan" data-toggle="tab">网贷天眼</a></li>
+					<li style="font-size: 17px;width: 25%;text-align: center;"><a href="#wangdaizhijia" data-toggle="tab">网贷之家</a></li>
 				</ul>
 				<div id="myTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="qianzhuli">

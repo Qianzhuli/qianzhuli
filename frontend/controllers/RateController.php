@@ -5,6 +5,8 @@ namespace frontend\controllers;
 use frontend\controllers\base\BaseController;
 use common\models\OrgsCacheModel;
 use common\models\OrgsModel;
+use frontend\models\PostsForm;
+use common\models\PostsModel;
 use Yii;
 
 /**
@@ -98,7 +100,13 @@ class RateController extends BaseController
 			$data['org_name'] = $org_name;
 			$data['error'] = '信息采集中...';
 		}
-		return $this->render('view', ['data' => $data]);
+		$curPage = Yii::$app->request->get('page',1);
+		//查询条件
+		$cond = ['is_valid' => PostsModel::IS_VALID];
+		//$cond = [];
+		$limit = 12;
+		$res = PostsForm::getList($cond,$curPage,$limit);
+		return $this->render('view', ['data' => $data, 'data2' => $res['data']]);
 	}
 
 	/**
