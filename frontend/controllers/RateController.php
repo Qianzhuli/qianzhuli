@@ -29,7 +29,7 @@ class RateController extends BaseController
 			$res1 = $cache->get($key1);
 		}else{
 			$date = 20190304;
-			$res1 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 1])->one();
+			$res1 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 1])->asArray()->one();
 			$cache->set($key1,$res1,86400);
 		}
 		//判断是否取到，未取到再去爬
@@ -37,6 +37,7 @@ class RateController extends BaseController
 			$resArray1 = unserialize($res1['data']);
 		}else {
 			//去爬代码并存库
+			$resArray1 = [];
 		}
 
 		//融360
@@ -45,7 +46,7 @@ class RateController extends BaseController
 			$res2 = $cache->get($key2);
 		}else{
 			$date = 20190304;
-			$res2 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 2])->one();
+			$res2 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 2])->asArray()->one();
 			$cache->set($key2,$res2,86400);
 		}
 		//判断是否取到，未取到再去爬
@@ -53,6 +54,7 @@ class RateController extends BaseController
 			$resArray2 = unserialize($res2['data']);
 		}else {
 			//去爬代码并存库
+			$resArray2 = [];
 		}
 
 		//网贷天眼
@@ -61,7 +63,7 @@ class RateController extends BaseController
 			$res3 = $cache->get($key3);
 		}else{
 			$date = 20190304;
-			$res3 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 3])->one();
+			$res3 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 3])->asArray()->one();
 			$cache->set($key3,$res3,86400);
 		}
 		//判断是否取到，未取到再去爬
@@ -69,15 +71,16 @@ class RateController extends BaseController
 			$resArray3 = unserialize($res3['data']);
 		}else {
 			//去爬代码并存库
+			$resArray3 = [];
 		}
 
 		//网贷之家
-		$key4 = 'RateQianzhuli' . $date;
+		$key4 = 'RateWangdaizhijia' . $date;
 		if ($cache->exists($key4)) {
 			$res4 = $cache->get($key4);
 		}else{
 			$date = 20190304;
-			$res4 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 4])->one();
+			$res4 = OrgsCacheModel::find()->where(['date' => $date, 'from' => 4])->asArray()->one();
 			$cache->set($key4,$res4,86400);
 		}
 		//判断是否取到，未取到再去爬
@@ -85,6 +88,7 @@ class RateController extends BaseController
 			$resArray4 = unserialize($res4['data']);
 		}else {
 			//去爬代码并存库
+			$resArray4 = [];
 		}
 		
 		return $this->render('index',['data1' => $resArray1, 'data2' => $resArray2, 'data3' => $resArray3, 'data4' => $resArray4]);

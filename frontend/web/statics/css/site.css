@@ -339,8 +339,8 @@ a.desc:after {
 }
 .animated_div:hover {
     /*过渡*/
-    transition-property:transform;
+    /*transition-property:transform;
     transition-duration:1s;
-    transform: rotateY(360deg);
+    transform: rotateY(360deg);*/
     border-bottom: 5px solid blue;
 }

@@ -27,7 +27,7 @@ use yii\widgets\LinkPager;
 		                        <span class="glyphicon glyphicon-user"></span><a href="<?=Url::to(['member/index','id'=>$list['user_id']])?>"><?=$list['user_name']?></a>&nbsp;
 		                        <span class="glyphicon glyphicon-time"></span><?=date('Y-m-d',$list['created_at'])?>&nbsp;
 		                        <span class="glyphicon glyphicon-eye-open"></span><?=isset($list['extends']['browser'])?$list['extends']['browser']:0?>&nbsp;
-		                        <span class="glyphicon glyphicon-comment"></span><a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><?=isset($list['extend']['comment'])?$list['extend']['comment']:0?></a>
+		                        <span class="glyphicon glyphicon-comment"></span><a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><?=isset($list['extends']['comment'])?$list['extends']['comment']:0?></a>
 		                    </span>
 		                    <p class="post-content"><?=$list['summary']?></p>
 		                    <a href="<?=Url::to(['posts/view','id'=>$list['id']])?>"><button class="btn no-radius btn-warning btn-sm pull-right-mine">阅读全文</button></a>

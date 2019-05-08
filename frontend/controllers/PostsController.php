@@ -137,6 +137,8 @@ class PostsController extends BaseController
 				}
 				if($model->saveComment($SubmitComment,$id,$user)){
 					//跳回本頁面
+					//评论数+1
+					$Extendsmodel->upCounter(['post_id' => $id], 'comment', 1);
 					//重新获取新的评论
 					$comments = $model->getComments($id);
 					//刷新model

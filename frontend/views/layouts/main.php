@@ -62,10 +62,6 @@ AppAsset::register($this);
             'linkOptions' => ['class' => 'portrait'],
             'items' => [
                 [
-                    'label' => '<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','Personal center'),
-                    'url' => ['/user/index'],
-                ],
-                [
                     'label' => '<i class="fa fa-cube" aria-hidden="true"></i>&nbsp;&nbsp;' . Yii::t('common','My Information'),
                     'url' => ['/posts/mine'],
                 ],

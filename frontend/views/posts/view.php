@@ -3,7 +3,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 $this->title = $post['title'];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('common','Information'),'url' => ['posts/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('common','Information'),'url' => ['posts/loan']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
@@ -14,7 +14,8 @@ $this->params['breadcrumbs'][] = $this->title;
 			<h1><?= $post['title'] ?></h1>
 			<span>作者：<?= $post['user_name']; ?>&nbsp;&nbsp;</span>
 			<span>时间：<?= date('Y-m-d',$post['created_at']); ?>&nbsp;&nbsp;</span>
-			<span>浏览次数：<?= isset($post['extends']['browser'])?$post['extends']['browser']:0 ?>次</span>
+			<span>浏览数：<?= isset($post['extends']['browser'])?$post['extends']['browser']:0 ?>次</span>
+			<span>评论数：<?= isset($post['extends']['comment'])?$post['extends']['comment']:0 ?>次</span>
 		</div>
 		<div class="page-content">
 			<?= $post['content']; ?>
@@ -37,15 +38,18 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?php ActiveForm::end() ?>
 		</div>
 		<!--展示评论区-->
-		<div class="allComments">全部评论:</div>
+		<div class="allComments" style="padding-bottom: 5px;">全部评论:</div>
 		<div class="post-view-comments">
 			<table class="table table-striped">
 				<?php foreach ($comments as $comment):?>
 					<tr>
-						<td><span><i class="fa fa-user" aria-hidden="true"></i> &nbsp;<?= $comment['user'].':' ?></span><span style="float: right; font-size: 14px; color: gray;"><?= date('Y/m/d H:i:s', $comment['create_at']); ?></span></td>
+						<td>
+							<span style="font-size: 18px;"><?= '<img src="' . Yii::$app->params['portrait']['small'] . '" style="width:30px;">' ?>&nbsp;&nbsp;<?= $comment['user'].':' ?></span>
+							<span style="float: right; font-size: 14px; color: gray;"><?= date('Y/m/d H:i:s', $comment['create_at']); ?></span>
+						</td>
 					</tr>
 					<tr>
-						<td><?= $comment['content'] ?></td>
+						<td style="line-height: 300%; padding-left: 10px;"><?= $comment['content'] ?></td>
 					</tr>
 				<?php endforeach; ?>
 			</table>
