@@ -56,46 +56,30 @@ $this->title = Yii::t('common','Qianzhuli-a trusted loan rating website');
         </div>
 
         <!-- 第二部分 -->
-        <div class="row">
-                    <div class="col-lg-3">
-                        <h2>Heading</h2>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur.</p>
-
-                        <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+        <div class="row" style="padding-top: -5px; border-bottom: 1px solid blue;">
+            <div class="col-lg-12" >
+                <div style="float: left;"><h3>热门平台</h3></div>
+                <div style="float: right; margin-top: 20px; font-size: 16px; color: gray;">本网贷评级结果仅供参考，不构成投资建议,投资需谨慎！&nbsp;</div>
+            </div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid blue; padding-bottom: 2px;">
+                    <div class="col-lg-2 animated_div">
+                        <?= '<a href= "https://www.renrendai.com/ppb/cv1/page/5c92146469224a2fad10d989.html?utm_source=pc_pz_sogou&utm_medium=98727&utm_campaign=831733554&utm_content=20110572&utm_term=49_150589817057211"><img src="' . Yii::$app->params['webImages']['Renrendai'] . '"></a>'?>
                     </div>
-                    <div class="col-lg-3">
-                        <h2>Heading</h2>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur.</p>
-
-                        <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                    <div class="col-lg-2 animated_div">
+                        <?= '<a href= "https://www.myerong.com/phone/landPage.html?from=sogou&sourceid=H5LC-84&activiteid=yhcgb"><img src="' . Yii::$app->params['webImages']['Yinduowang'] . '"></a>'?>
                     </div>
-                    <div class="col-lg-3">
-                        <h2>Heading</h2>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur.</p>
-
-                        <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                    <div class="col-lg-2 animated_div">
+                        <?= '<a href= "https://www.hexindai.com/"><img src="' . Yii::$app->params['webImages']['Hexindai'] . '"></a>'?>
                     </div>
-                    <div class="col-lg-3">
-                        <h2>Heading</h2>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur.</p>
-
-                        <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                    <div class="col-lg-2 animated_div">
+                        <?= '<a href= "https://licai.wealth365.com.cn/breezenew/landPage/backflowFour.html?ch=1060182997"><img src="' . Yii::$app->params['webImages']['Zhangzhongjinrong'] . '"></a>'?>
+                    </div>
+                    <div class="col-lg-2 animated_div">
+                        <?= '<a href= "http://www.maizijf.com/"><img src="' . Yii::$app->params['webImages']['Maizijinfu'] . '"></a>'?>
+                    </div>
+                    <div class="col-lg-2 animated_div">
+                        <?= '<a href= "https://www.51tuodao.com/#tyshouye4"><img src="' . Yii::$app->params['webImages']['Tuodaojinfu'] . '"></a>'?>
                     </div>
         </div>
     </div>

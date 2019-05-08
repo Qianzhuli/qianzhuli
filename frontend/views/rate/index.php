@@ -176,6 +176,9 @@ $this->params['breadcrumbs'][] = $this->title;
 						</div>
 					</div>
 				</div>
-			</div>
+				<div>
+        			<?= '<img src="' . Yii::$app->params['webImages']['SiteTitle1'] . '" class="site-index-jumbotron-img">'; ?>
+    			</div>
+	</div>
 </div>
 	

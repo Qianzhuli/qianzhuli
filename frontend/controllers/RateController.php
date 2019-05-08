@@ -96,17 +96,13 @@ class RateController extends BaseController
 	public function actionView($org_name)
 	{
 		$data = OrgsModel::find()->where(['org_name' => $org_name])->asArray()->one();
-		if (!$data) {
+		if ($data['content']) {
+			return $this->redirect($data['content']);
+		}else {
 			$data['org_name'] = $org_name;
 			$data['error'] = '信息采集中...';
 		}
-		$curPage = Yii::$app->request->get('page',1);
-		//查询条件
-		$cond = ['is_valid' => PostsModel::IS_VALID];
-		//$cond = [];
-		$limit = 12;
-		$res = PostsForm::getList($cond,$curPage,$limit);
-		return $this->render('view', ['data' => $data, 'data2' => $res['data']]);
+		return $this->render('view', ['data' => $data]);
 	}
 
 	/**

@@ -328,3 +328,19 @@ a.desc:after {
     color: #ffffff;
     background-color: #2472bc;
 }
+
+/*首页热门平台*/
+.animated_div {
+    border-bottom: 5px solid #fff;
+    /*反向过渡
+    transition-property:transform,background;
+    transition-duration:0.3s,1.5s;
+    */
+}
+.animated_div:hover {
+    /*过渡*/
+    transition-property:transform;
+    transition-duration:1s;
+    transform: rotateY(360deg);
+    border-bottom: 5px solid blue;
+}
