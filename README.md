@@ -1,17 +1,17 @@
 # 钱助理网贷评级网站——前台系统
 ### 这是我的毕业设计，基于Yii2.0 advanced,项目完全开源，欢迎各位使用！
 #### 如果你需要用到这个仓库，你需要做如下几件事：
-1. git clone这个仓库到本地
-2. 拷贝vendor目录到该项目文件夹下（vendor目录网上自己找一下）
-3. 在项目文件夹下 composer update一下，自动安装一下如下拓展（不清楚composer？没关系，移步[http://www.phpcomposer.com](https://note.youdao.com/)）
+1. git clone https://github.com/Qianzhuli/qianzhuli.git qianzhuli
+2. cd qianzhuli
+3. composer install（不清楚composer？没关系，移步[http://www.phpcomposer.com](https://note.youdao.com/)）
+4. window运行ini.bat初始化，linux运行ini
 
+本项目用到的package
 ```
   crazydb/yii2-ueditor(富文本)
 
   yii2-bootstrap-tags-input(标签)
 ```
-
-4. window运行ini.bat初始化，linux运行ini
 
 如遇到问题，可以联系 735407073@qq.com 
 
@@ -19,7 +19,7 @@
 
 
 ### 网站部分展示
-#### 评级页(数据来源于爬虫，暂时用数据库按日期缓存，后续迁移至redis)：
+#### 评级页(数据来源于爬虫，按天缓存在Redis)：
 ![123](https://raw.githubusercontent.com/Qianzhuli/qianzhuli/master/readme_images/123.png)
 
 #### 资讯列表页(支持分页)：
